@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="65sp"
+    android:paddingLeft="10sp"
+    android:paddingRight="10sp"
+    android:paddingBottom="10sp"
+    android:baselineAligned="false"
+    android:clickable="false"
+    android:background="@color/login_bg_color">
+
+    <com.beardedhen.androidbootstrap.BootstrapCircleThumbnail
+        android:id="@+id/userIMG"
+        android:layout_width="@dimen/default_circle_size"
+        android:layout_height="@dimen/default_circle_size"
+        android:src="@drawable/icon_find_pic"
+        app:bootstrapBrand="secondary"
+        android:layout_centerHorizontal="true" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/userIMG"
+        android:layout_marginLeft="45sp"
+        android:layout_marginRight="45sp">
+
+        <View
+            android:id="@+id/line1"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dip"
+            android:background="@color/ios_gray"
+            android:layout_above="@+id/UserimageView"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="3sp" />
+
+        <EditText
+            android:id="@+id/account"
+            android:layout_width="wrap_content"
+            android:layout_height="40sp"
+            android:background="@null"
+            android:singleLine="true"
+            android:textColorHint="@color/ios_gray"
+            android:hint="user name"
+            android:textColor="@color/white"
+            android:textCursorDrawable="@color/white"
+            android:layout_marginTop="155sp"
+            android:layout_marginLeft="7sp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_toRightOf="@+id/UserimageView"
+            android:layout_toEndOf="@+id/UserimageView" />
+
+        <ImageView
+            style="@style/icon_size"
+            android:src="@drawable/ic_user"
+            android:layout_alignTop="@+id/account"
+            android:layout_alignBottom="@+id/account"
+            android:id="@+id/UserimageView"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <View
+            android:id="@+id/line2"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dip"
+            android:layout_marginTop="5sp"
+            android:layout_marginBottom="3sp"
+            android:background="@color/ios_gray"
+            android:layout_below="@+id/account"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="wrap_content"
+            android:layout_height="40sp"
+            android:background="@null"
+            android:singleLine="true"
+            android:textColorHint="@color/ios_gray"
+            android:textCursorDrawable="@color/white"
+            android:password="true"
+            android:hint="password"
+            android:textColor="@color/white"
+            android:layout_below="@+id/line2"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignLeft="@+id/account"
+            android:layout_alignStart="@+id/account" />
+
+        <ImageView
+            style="@style/icon_size"
+            android:src="@drawable/ic_sucure"
+            android:id="@+id/PasswdImageView"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignRight="@+id/UserimageView"
+            android:layout_alignEnd="@+id/UserimageView"
+            android:layout_below="@+id/line2"
+            android:layout_alignBottom="@+id/password" />
+
+        <View
+            android:id="@+id/line3"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dip"
+            android:layout_marginTop="3sp"
+            android:background="@color/ios_gray"
+            android:layout_below="@+id/password"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:id="@+id/LoginButton"
+            android:layout_marginTop="57sp"
+            android:text="登录"
+            android:textSize="15sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:background="@drawable/button"
+            android:gravity="center"
+            android:singleLine="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/line3" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/newUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autoLink="web"
+        android:textSize="15sp"
+        android:linksClickable="true"
+        android:text="新用户?"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/ios_gray_light"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>

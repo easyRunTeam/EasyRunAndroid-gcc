@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">EasyRun</string>
+    <string name="app_name_CN">易跑平台</string>
+    <string name="drawer_open">drawer_open</string>
+    <string name="drawer_close">drawer_close</string>
+    <string name="upload_user_info_title">上传者信息</string>
+    <string-array name="bloodTypeList">
+        <item>A</item>
+        <item>B</item>
+        <item>O</item>
+        <item>AB</item>
+        <item>其他</item>
+    </string-array>
+    <array name="bootstrap_dropdown_example_data">
+        <item>First item</item>
+        <item>Second item</item>
+        <item>{dropdown_disabled}Disabled item</item>
+        <item>{dropdown_header}Dropdown header</item>
+        <item>Fourth item</item>
+        <item>Fifth item</item>
+        <item>{dropdown_separator}</item>
+        <item>Separated item</item>
+    </array>
+</resources>

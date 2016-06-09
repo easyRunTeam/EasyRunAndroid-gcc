@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="ActionBarColor">#a74cda6a</color>
+    <color name="white">#ffffff</color>
+    <color name="bgBackSideColor">#f4f0ff</color>
+    <color name="actionbar_color">#6A5ACD</color>
+    <color name="drawer_arrow_second_color">#303f9f</color>
+    <color name="button_blue">#56b4e2</color>
+    <color name="mainTextColor">#343d43</color>
+    <color name="contentDividerLine">#e0e0e0</color>
+
+    <color name="ios_purple">#6A5ACD</color>
+    <color name="ios_gray">#87c0c0c0</color>
+    <color name="ios_gray_light">#eec0c0c0</color>
+    <color name="login_bg_color">#424679</color>
+</resources>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.beardedhen.androidbootstrap.BootstrapProgressBar
+        android:id="@+id/example_progress_striped"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:background="#ffffff"
+        app:bootstrapBrand="info"
+        app:progress="33"
+        app:animated="true"
+        app:striped="true"
+        android:layout_alignParentTop="true" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+
+            <com.beardedhen.androidbootstrap.AwesomeTextView
+                style="@style/wrapping_fa_text"
+                android:textSize="30dp"
+                app:bootstrapBrand="info"
+                app:bootstrapText="用户注册"
+                tools:ignore="SpUsage"
+                android:layout_marginTop="26dp"
+                android:id="@+id/title"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" />
+
+            <com.beardedhen.androidbootstrap.AwesomeTextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="5sp"
+                android:textSize="13dp"
+                app:bootstrapBrand="warning"
+                app:bootstrapText="新用户你好，请填写以下内容进行注册"
+                tools:ignore="SpUsage"
+                android:id="@+id/tip"
+                android:layout_below="@+id/title"
+                android:layout_centerHorizontal="true" />
+
+            <com.beardedhen.androidbootstrap.BootstrapCircleThumbnail
+                android:id="@+id/userIMG"
+                android:layout_width="@dimen/default_circle_size"
+                android:layout_height="@dimen/default_circle_size"
+                android:src="@drawable/default_icon"
+
+                app:bootstrapBrand="secondary"
+                android:layout_marginTop="32dp"
+                android:layout_below="@+id/tip"
+                android:layout_centerHorizontal="true" />
+
+            <com.beardedhen.androidbootstrap.AwesomeTextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginRight="8sp"
+                android:textSize="18dp"
+                app:bootstrapBrand="info"
+                app:bootstrapText="用户名"
+                tools:ignore="SpUsage"
+                android:id="@+id/textAccount"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_above="@+id/password"
+                android:layout_alignTop="@+id/account" />
+
+            <com.beardedhen.androidbootstrap.BootstrapEditText
+                android:id="@+id/account"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="请输入用户名"
+                android:singleLine="true"
+                app:bootstrapSize="lg"
+                app:bootstrapBrand="info"
+                app:roundedCorners="true"
+                android:layout_below="@+id/userIMG"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="29dp"
+                android:layout_toRightOf="@+id/textAccount"
+                android:layout_toEndOf="@+id/textAccount" />
+
+            <com.beardedhen.androidbootstrap.AwesomeTextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textSize="18dp"
+                app:bootstrapBrand="info"
+                app:bootstrapText="密   码"
+                tools:ignore="SpUsage"
+                android:id="@+id/textPassword"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignRight="@+id/textAccount"
+                android:layout_alignEnd="@+id/textAccount"
+                android:layout_alignTop="@+id/password"
+                android:layout_alignBottom="@+id/password" />
+
+            <com.beardedhen.androidbootstrap.BootstrapEditText
+                android:id="@+id/password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6sp"
+                app:bootstrapSize="lg"
+                android:password="true"
+                android:singleLine="true"
+                android:hint="请输入密码"
+                app:bootstrapBrand="info"
+                app:roundedCorners="true"
+                android:layout_below="@+id/account"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_toRightOf="@+id/textAccount"
+                android:layout_toEndOf="@+id/textAccount" />
+
+            <Button
+                android:id="@+id/next_step"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="下一步"
+                android:textColor="#fff"
+                android:background="@drawable/button_blue"
+                android:layout_marginTop="36dp"
+                android:layout_below="@+id/textPassword"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
