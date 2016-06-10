@@ -87,6 +87,9 @@ public class RegisterActivity2 extends Activity {
                 Toast toast = Toast.makeText(RegisterActivity2.this,"网络未连接", Toast.LENGTH_SHORT);
                 toast.setGravity(Gravity.CENTER, 0, 0);
                 toast.show();
+                Intent intent = new Intent();
+                intent.setClass(RegisterActivity2.this, NonetActivity.class);
+                startActivity(intent);
             }
             new Thread() {
                 public void run() {

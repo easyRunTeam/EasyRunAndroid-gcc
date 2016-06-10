@@ -9,6 +9,7 @@ import android.content.res.Configuration;
 import android.net.Uri;
 import android.support.v4.widget.DrawerLayout;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
@@ -24,6 +25,7 @@ import com.special.ResideMenu.ResideMenuItem;
 
 import easyrun.bean.UserBean;
 import easyrun.util.R;
+import easyrun.util.ServerData;
 
 public class MainActivity extends Activity implements View.OnClickListener{
     private ResideMenu resideMenu;
@@ -239,19 +241,38 @@ public class MainActivity extends Activity implements View.OnClickListener{
         }else if (view == itemSettings){
             changeFragment(new SettingsFragment());
         }else if (view == user_upload_pic){
-
-            UserUploadPicFragment userUploadPicFragment=new UserUploadPicFragment();
-            Bundle bundle=new Bundle();
-            bundle.putParcelable("userInfo",user);
-            userUploadPicFragment.setArguments(bundle);
-            changeFragment(userUploadPicFragment);
+            if (!ServerData.checkNetwork(MainActivity.this)) {// 检测网络
+                Toast toast = Toast.makeText(MainActivity.this,"网络未连接", Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, NonetActivity.class);
+                startActivity(intent);
+            }
+            else {
+                UserUploadPicFragment userUploadPicFragment = new UserUploadPicFragment();
+                Bundle bundle = new Bundle();
+                bundle.putParcelable("userInfo", user);
+                userUploadPicFragment.setArguments(bundle);
+                changeFragment(userUploadPicFragment);
+            }
         }else if (view == find_Picture){
-            FindPictureFragment findPictureFragment = new FindPictureFragment();
-            //传递用户信息
-            Bundle bundle = new Bundle();
-            bundle.putParcelable("userInfo",user);
-            findPictureFragment.setArguments(bundle);
-            changeFragment(findPictureFragment);
+            if (!ServerData.checkNetwork(MainActivity.this)) {// 检测网络
+                Toast toast = Toast.makeText(MainActivity.this,"网络未连接", Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, NonetActivity.class);
+                startActivity(intent);
+            }
+            else {
+                FindPictureFragment findPictureFragment = new FindPictureFragment();
+                //传递用户信息
+                Bundle bundle = new Bundle();
+                bundle.putParcelable("userInfo", user);
+                findPictureFragment.setArguments(bundle);
+                changeFragment(findPictureFragment);
+            }
         }else if (view == shopping){
             changeFragment(new ShoppingFragment());
         }else if (view == marathon_register){

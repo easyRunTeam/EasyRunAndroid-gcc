@@ -14,46 +14,94 @@
 
 
     <ImageView
-        android:layout_width="300dp"
-        android:layout_height="200dp"
-        android:background="@drawable/frame11"
+        android:layout_width="320dp"
+        android:layout_height="250dp"
         android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:src="@drawable/frame11"
         android:id="@+id/pic"
         android:scaleType="fitXY"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/bg_border"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal"
+        android:gravity="right"
+        android:layout_marginTop="20dp">
+        <Button
+            android:id="@+id/deletePicture"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:text="删除"
+            android:textSize="18dp"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_gravity="right"
+            android:textColor="#ffffff"
+            android:background="@drawable/button_upload_pic"
+            android:gravity="center"
+            android:singleLine="true"
+            android:layout_below="@+id/line3"
+            android:visibility="invisible"
+            android:drawableLeft="@drawable/delete"
 
 
+            />
+    <Button
+        android:paddingLeft="5dp"
+        android:id="@+id/choosePicture"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:text="选择"
+        android:textSize="18dp"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:layout_gravity="right"
+        android:textColor="#ffffff"
+        android:background="@drawable/button_upload_pic"
+        android:gravity="center"
+        android:singleLine="true"
+        android:layout_below="@+id/line3"
+        android:drawableLeft="@drawable/collection"
+        />
+
+    </LinearLayout>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="赛事所在地"
+        android:textSize="20dp"
         style="@style/fragment_text"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="25dp"
+        android:textColor="#000000"
         android:id="@+id/textView"
-        android:gravity="center"
-        android:layout_gravity="center_horizontal" />
+         />
 
     <Spinner
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_width="273dp"
-        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="center"
         android:id="@+id/bEvent"
         android:layout_gravity="center" />
-
-
-    <com.beardedhen.androidbootstrap.BootstrapButton
-        style="@style/wrapping_button"
-        android:text="提交"
+    <Button
         android:id="@+id/submit"
-        app:bootstrapBrand="primary"
         android:layout_marginTop="20dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_width="117dp"
+        android:layout_marginLeft="20dp"
+        android:text="提交"
+        android:textSize="15sp"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:textColor="#ffffff"
+        android:background="@drawable/button_upload_pic"
+        android:gravity="center"
+        android:singleLine="true"
+        android:layout_below="@+id/line3"
         />
 
 </LinearLayout>

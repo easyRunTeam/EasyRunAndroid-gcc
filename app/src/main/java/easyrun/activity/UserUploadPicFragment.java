@@ -25,6 +25,7 @@ import android.os.Parcelable;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,9 +37,6 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.beardedhen.androidbootstrap.BootstrapButton;
-import com.beardedhen.androidbootstrap.BootstrapDropDown;
-import com.beardedhen.androidbootstrap.BootstrapThumbnail;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.squareup.okhttp.Call;
@@ -50,6 +48,7 @@ import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.RequestBody;
 import com.squareup.okhttp.Response;
+
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -84,7 +83,7 @@ public class UserUploadPicFragment extends Fragment {
     private ImageView pic;
     private String [] events;
     private Spinner bEvent;
-    private BootstrapButton submit;
+    private Button submit;
     private String account;
     private final OkHttpClient client = new OkHttpClient();
     private String  event;
@@ -94,7 +93,8 @@ public class UserUploadPicFragment extends Fragment {
     private static final int IMAGE_REQUEST_CODE = 0;
     private static final int CAMERA_REQUEST_CODE = 1;
     private static final MediaType MEDIA_TYPE_PNG = MediaType.parse("image/png");
-    private  BootstrapDropDown bbEvent;
+    private Button choosePicture;
+    private Button deletePicture;
 
 
 
@@ -107,7 +107,6 @@ public class UserUploadPicFragment extends Fragment {
                     Toast.makeText(getActivity(), "success", Toast.LENGTH_SHORT).show();
                     Bundle bundle=msg.getData();
                     String [] events=bundle.getStringArray("events");
-                    System.out.println(events[0]);
                     ArrayAdapter<String> adapterEvents=new ArrayAdapter<String>(getActivity(),android.R.layout.simple_spinner_item,events);
                     adapterEvents.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                     bEvent.setAdapter(adapterEvents);
@@ -137,16 +136,26 @@ public class UserUploadPicFragment extends Fragment {
             user = bundle.getParcelable("userInfo");
             String account = user.getAccount();//账号
             init();
-
             bEvent=(Spinner)mMainView.findViewById(R.id.bEvent);
-        submit=(BootstrapButton)mMainView.findViewById(R.id.submit);
-        ArrayAdapter<CharSequence> adapterEvents=ArrayAdapter.createFromResource(getActivity(),R.array.bootstrap_dropdown_example_data,android.R.layout.simple_spinner_item);
+        submit=(Button)mMainView.findViewById(R.id.submit);
+
+        ArrayAdapter<CharSequence> adapterEvents=ArrayAdapter.createFromResource(getActivity(),R.array.bootstrap_dropdown_example_data,android.R.layout.simple_spinner_dropdown_item);
         adapterEvents.setDropDownViewResource(android.R.layout.simple_spinner_item);
         bEvent.setAdapter(adapterEvents);
         bEvent.setOnItemSelectedListener(spnListener);
             submit.setOnClickListener(mylistener);
         pic=(ImageView)mMainView.findViewById(R.id.pic);
-            pic.setOnClickListener(new View.OnClickListener() {
+            choosePicture=(Button)mMainView.findViewById(R.id.choosePicture);
+            deletePicture=(Button)mMainView.findViewById(R.id.deletePicture);
+            deletePicture.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    pic.setImageResource(R.drawable.frame11);
+                    PicPath=null;
+                    deletePicture.setVisibility(View.INVISIBLE);
+                }
+            });
+            choosePicture.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     showDialog();
@@ -162,6 +171,15 @@ public class UserUploadPicFragment extends Fragment {
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.submit:
+                    if (!ServerData.checkNetwork(getActivity())) {// 检测网络
+                        Toast toast = Toast.makeText(getActivity(),"网络未连接", Toast.LENGTH_SHORT);
+                        toast.setGravity(Gravity.CENTER, 0, 0);
+                        toast.show();
+                        Intent intent = new Intent();
+                        intent.setClass(getActivity(), NonetActivity.class);
+                        startActivity(intent);
+                        break;
+                    }
                     Bundle bundle = new Bundle();
                     bundle.putString("event", event);
                     bundle.putString("account", user.getAccount());
@@ -172,6 +190,7 @@ public class UserUploadPicFragment extends Fragment {
                             File file = new File(PicPath);
                             String path=ServerData.BaseURL+"UploadforUser2";
                             //OKHttp
+
                             RequestBody requestBody = new MultipartBuilder()
                                     .type(MultipartBuilder.FORM)
                                     .addFormDataPart("account", user.getAccount())
@@ -194,11 +213,15 @@ public class UserUploadPicFragment extends Fragment {
                                 public void onResponse(Response response) throws IOException {
                                     if (!response.isSuccessful()) {
                                         throw new IOException("Unexpected code " + response);
-                                    } else if (response.body().toString() == "failed") {
-                                        handler.sendEmptyMessage(SendDataToServerByOKHttp.SEND_FAIL);
                                     } else {
-                                        System.out.println("succcess");
+                                        byte[] b = response.body().bytes(); //获取数据的bytes
+                                        String result = new String(b, "GB2312"); //然后将其转为gb2312
+                                        if (result.equals("failed")) {
+                                            handler.sendEmptyMessage(SendDataToServerByOKHttp.SEND_FAIL);
+                                        } else {
+                                            System.out.println("succcess");
 
+                                        }
                                     }
                                 }
                             });
@@ -228,52 +251,53 @@ public class UserUploadPicFragment extends Fragment {
         //从服务器获取马拉松比赛信息
         Thread thread = new Thread(new Runnable() {
             public void run() {
-
-                Map<String, String> map = new HashMap<String, String>();
-                map.put("account", account);
-              String path=new SendDataToServerByOKHttp(handler).generatePath(map,ServerData.BaseURL+"UploadforUser1");
-                System.out.println(path);
-                Request request = new Request.Builder()
-                        .url(path)
-                        .build();
+                String path=ServerData.BaseURL + "UploadforUser1";
+             Request request = new Request.Builder()
+                        .url(path).build();
 
                 client.newCall(request).enqueue(new Callback() {
                     @Override
                     public void onFailure(Request request, IOException e) {
+                        Toast toast = Toast.makeText(getActivity(), "网络未连接", Toast.LENGTH_SHORT);
+                        toast.setGravity(Gravity.CENTER, 0, 0);
+                        toast.show();
                         e.printStackTrace();
                     }
+
                     @Override
                     public void onResponse(Response response) throws IOException {
                         if (!response.isSuccessful()) {
                             throw new IOException("Unexpected code " + response);
-                        } else if (response.body().toString() == "failed") {
-                            handler.sendEmptyMessage(SendDataToServerByOKHttp.SEND_FAIL);
                         } else {
-                            try {
-
-                                //String jsonResult = URLDecoder.decode();
-                                byte[] b = response.body().bytes(); //获取数据的bytes
-                                String jsonResult = new String(b, "GB2312"); //然后将其转为gb2312
-                                Gson gson = new Gson();
-                                ArrayList<EventBean> list;
-                                list = gson.fromJson(jsonResult, new TypeToken< ArrayList<EventBean>>() {
-                                }.getType());
-                                int i=0;
-                              events=new String[list.size()];
-                                for(;i<list.size();i++) {
-                                    events[i]=list.get(i).getEventName();
-                                  //  System.out.println(event);
+                            byte[] b = response.body().bytes(); //获取数据的bytes
+                            String Result = new String(b, "GB2312"); //然后将其转为gb2312
+                            if (Result.equals("failed")) {
+                                handler.sendEmptyMessage(SendDataToServerByOKHttp.SEND_FAIL);
+                            } else {
+                                try {
+                                    Gson gson = new Gson();
+                                    ArrayList<EventBean> list;
+                                    list = gson.fromJson(Result, new TypeToken<ArrayList<EventBean>>() {
+                                    }.getType());
+                                    int i = 0;
+                                    events = new String[list.size()];
+                                    for (; i < list.size(); i++) {
+                                        events[i] = list.get(i).getEventName();
+                                        //  System.out.println(event);
+                                    }
+                                } catch (Exception e) {
+                                    System.out.println("----------<ERROR>--------");
+                                    e.printStackTrace();
                                 }
-                            } catch (Exception e) {
-                                System.out.println("----------<ERROR>--------");
-                                e.printStackTrace();
+                                Message msg = new Message();
+                                msg.what = SendDataToServerByOKHttp.SEND_SUCCESS;
+                                Bundle bundle = new Bundle();
+                                bundle.putStringArray("events", events);
+
+                                // bundle.putParcelableArrayList("events", (ArrayList<? extends Parcelable>) eevents);//传递对象数组
+                                msg.setData(bundle);
+                                handler.sendMessage(msg);
                             }
-                            Message msg = new Message();
-                            msg.what=SendDataToServerByOKHttp.SEND_SUCCESS;
-                            Bundle bundle=new Bundle();
-                            bundle.putStringArray("events",events);
-                            msg.setData(bundle);
-                            handler.sendMessage(msg);
                         }
                     }
                 });
@@ -349,6 +373,7 @@ public class UserUploadPicFragment extends Fragment {
 
                 /* 将Bitmap设定到ImageView */
                            pic.setImageBitmap(bitmap);
+                      deletePicture.setVisibility(View.VISIBLE);
                        } catch (FileNotFoundException e) {
                            Log.e("Exception", e.getMessage(),e);
                        }

@@ -80,9 +80,10 @@ public class RegisterActivity extends Activity {
             public void onClick(View v) {
                 // 检测网络
                 if (!ServerData.checkNetwork(RegisterActivity.this)) {
-                    Toast toast = Toast.makeText(RegisterActivity.this,"网络未连接", Toast.LENGTH_SHORT);
-                    toast.setGravity(Gravity.CENTER, 0, 0);
-                    toast.show();
+                    Intent intent = new Intent();
+                    intent.setClass(RegisterActivity.this, NonetActivity.class);
+                    startActivity(intent);
+
                 }
                 new Thread() {
                     public void run() {
