@@ -20,10 +20,10 @@ public class NonetActivity extends Activity {
         getActionBar().hide();
         super.onCreate(savedInstanceState);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);//解决软键盘遮挡
-        setContentView(R.layout.nonet);
+        /*setContentView(R.layout.nonet);
 
         reload1 = (Button)findViewById(R.id.reload);
 
-
+*/
     }
 }

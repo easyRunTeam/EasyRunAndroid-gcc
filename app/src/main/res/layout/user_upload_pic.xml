@@ -1,110 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    >
-
 
     <ImageView
         android:layout_width="320dp"
-        android:layout_height="250dp"
-        android:layout_marginTop="20dp"
+        android:layout_height="240dp"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="30sp"
         android:layout_marginRight="20dp"
         android:src="@drawable/frame11"
         android:id="@+id/pic"
         android:scaleType="fitXY"
         android:layout_gravity="center_horizontal"
-        android:background="@drawable/bg_border"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:orientation="horizontal"
-        android:gravity="right"
-        android:layout_marginTop="20dp">
-        <Button
-            android:id="@+id/deletePicture"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="20dp"
-            android:text="删除"
-            android:textSize="18dp"
-            android:layout_width="80dp"
-            android:layout_height="30dp"
-            android:layout_gravity="right"
-            android:textColor="#ffffff"
-            android:background="@drawable/button_upload_pic"
-            android:gravity="center"
-            android:singleLine="true"
-            android:layout_below="@+id/line3"
-            android:visibility="invisible"
-            android:drawableLeft="@drawable/delete"
+        android:layout_centerHorizontal="true" />
 
 
-            />
+
     <Button
-        android:paddingLeft="5dp"
+        android:paddingLeft="8dp"
         android:id="@+id/choosePicture"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="20dp"
         android:text="选择"
-        android:textSize="18dp"
-        android:layout_width="80dp"
+        android:textSize="15dp"
+        android:layout_marginTop="10sp"
+        android:layout_width="wrap_content"
         android:layout_height="30dp"
+        android:paddingRight="6dp"
         android:layout_gravity="right"
         android:textColor="#ffffff"
         android:background="@drawable/button_upload_pic"
         android:gravity="center"
         android:singleLine="true"
-        android:layout_below="@+id/line3"
         android:drawableLeft="@drawable/collection"
-        />
+        android:layout_below="@+id/pic"
+        android:layout_alignEnd="@+id/pic" />
 
-    </LinearLayout>
+    <Button
+        android:id="@+id/deletePicture"
+        android:text="删除"
+        android:textSize="15dp"
+        android:paddingRight="5dp"
+        android:paddingLeft="3dp"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_gravity="right"
+        android:textColor="@color/light_black"
+        android:background="@drawable/button_upload_pic_default"
+        android:gravity="center"
+        android:singleLine="true"
+        android:visibility="visible"
+        android:drawableLeft="@drawable/ic_delete"
+        android:layout_alignTop="@+id/choosePicture"
+        android:layout_toStartOf="@+id/choosePicture"
+        android:layout_alignBottom="@+id/choosePicture" />
+
+    <Button
+        android:id="@+id/PicName"
+        android:text="C:\\Picture\\photo.jpg"
+        android:textSize="15dp"
+        android:paddingRight="5dp"
+        android:paddingLeft="3dp"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_gravity="right"
+        android:textColor="@color/light_black"
+        android:background="@drawable/button_upload_pic_default"
+        android:gravity="center_vertical"
+        android:singleLine="true"
+        android:visibility="visible"
+        android:drawableLeft="@drawable/ic_file"
+        android:layout_alignBottom="@+id/deletePicture"
+        android:layout_alignTop="@+id/deletePicture"
+        android:layout_alignStart="@+id/pic"
+        android:layout_toStartOf="@+id/deletePicture" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="赛事所在地"
-        android:textSize="20dp"
+        android:textSize="16dp"
         style="@style/fragment_text"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="25dp"
-        android:textColor="#000000"
+        android:textColor="@color/light_black"
         android:id="@+id/textView"
-         />
+        android:layout_below="@+id/deletePicture"
+        android:layout_alignStart="@+id/pic"
+        android:layout_marginTop="23dp" />
 
     <Spinner
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
+        android:textColor="@color/light_black"
+        android:gravity="left"
         android:id="@+id/bEvent"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:layout_below="@+id/textView"
+        android:layout_alignStart="@+id/textView"
+        android:layout_alignEnd="@+id/choosePicture" />
+
     <Button
         android:id="@+id/submit"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10sp"
         android:text="提交"
         android:textSize="15sp"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:textColor="#ffffff"
-        android:background="@drawable/button_upload_pic"
+        android:background="@drawable/button_upload_pic2"
         android:gravity="center"
         android:singleLine="true"
-        android:layout_below="@+id/line3"
-        />
+        android:layout_gravity="right|center_vertical"
+        android:layout_below="@+id/bEvent"
+        android:layout_alignStart="@+id/bEvent" />
+</RelativeLayout>
 
-</LinearLayout>
 
-
-</FrameLayout>

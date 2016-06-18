@@ -16,5 +16,6 @@
     <color name="ios_gray">#87c0c0c0</color>
     <color name="ios_gray_light">#eec0c0c0</color>
     <color name="login_bg_color">#424679</color>
+    <color name="light_black">#e0605d5d</color>
     <color name="ivory_black">#292421</color>
 </resources>
