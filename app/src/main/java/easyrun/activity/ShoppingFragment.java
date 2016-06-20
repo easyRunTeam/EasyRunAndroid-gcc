@@ -23,10 +23,10 @@ public class ShoppingFragment extends Fragment {
 
     private View parentView;
     private ResideMenu resideMenu;
-    private ImageView clothes;//菜单项——服饰
-    private ImageView shoes;//菜单项——鞋子
-    private ImageView hotel;//菜单项——住宿
-    private ImageView bus;//菜单项——交通
+    private ImageView clothes;  //菜单项——服饰
+    private ImageView shoes;    //菜单项——鞋子
+    private ImageView hotel;    //菜单项——住宿
+    private ImageView bus;      //菜单项——交通
     private ImageView new_things;//菜单项——新品
 
     @Override
