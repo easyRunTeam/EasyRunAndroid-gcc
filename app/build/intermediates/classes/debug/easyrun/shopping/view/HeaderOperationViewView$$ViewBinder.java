@@ -8,8 +8,8 @@ import butterknife.ButterKnife.ViewBinder;
 public class HeaderOperationViewView$$ViewBinder<T extends easyrun.shopping.view.HeaderOperationViewView> implements ViewBinder<T> {
   @Override public void bind(final Finder finder, final T target, Object source) {
     View view;
-    view = finder.findRequiredView(source, 2131625095, "field 'gvOperation'");
-    target.gvOperation = finder.castView(view, 2131625095, "field 'gvOperation'");
+    view = finder.findRequiredView(source, 2131625088, "field 'gvOperation'");
+    target.gvOperation = finder.castView(view, 2131625088, "field 'gvOperation'");
   }
 
   @Override public void unbind(T target) {

@@ -28,7 +28,6 @@ import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import easyrun.bean.FreePicBean;
 import easyrun.server.SendDataToServerByOKHttp;
 import easyrun.shopping.adapter.ClothesAdapter;
 import easyrun.shopping.model.ChannelEntity;
@@ -48,7 +47,7 @@ import easyrun.util.ServerData;
 /**
  * Created by gecongcong on 2016/6/19.
  */
-public class Sp_shoes_subFragment extends Fragment implements SmoothListView.ISmoothListViewListener {
+public class Sp_clothes_subFragment extends Fragment implements SmoothListView.ISmoothListViewListener {
 
     @Bind(R.id.listView)
     SmoothListView smoothListView;
@@ -124,7 +123,7 @@ public class Sp_shoes_subFragment extends Fragment implements SmoothListView.ISm
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mMainView = inflater.inflate(R.layout.activity_main, container, false);
+        mMainView = inflater.inflate(R.layout.shop_clothes_main, container, false);
         ButterKnife.bind(this,mMainView);
         initData();
         return mMainView;

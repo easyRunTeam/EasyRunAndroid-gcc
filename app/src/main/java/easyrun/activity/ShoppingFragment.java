@@ -12,7 +12,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import com.special.ResideMenu.ResideMenu;
 import easyrun.adapter.ShoppingPicAdapter;
-import easyrun.shopping.ui.Sp_shoes_subFragment;
+import easyrun.shopping.ui.Sp_clothes_subFragment;
 import easyrun.util.R;
 import me.relex.circleindicator.CircleIndicator;
 
@@ -54,10 +54,10 @@ public class ShoppingFragment extends Fragment {
             //鼠标点击菜单项进入相应的子商城
             switch (v.getId()){
                 case R.id.clothes:
-                    changeFragment(new Sp_shoes_subFragment());
+                    changeFragment(new Sp_clothes_subFragment());
                     break;
                 case R.id.shoes:
-                    changeFragment(new Sp_shoes_subFragment());
+                    changeFragment(new Sp_clothes_subFragment());
                     break;
                 case R.id.hotel:
                     break;
