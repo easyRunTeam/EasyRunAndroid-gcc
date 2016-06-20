@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="140sp"
+                android:id="@+id/ignored_view"
+                android:layout_alignParentStart="true">
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/viewpager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal|bottom" />
+                <me.relex.circleindicator.CircleIndicator
+                    android:id="@+id/indicator"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="20sp"
+                    android:layout_marginBottom="5sp"/>
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80sp"
+                android:id="@+id/ShoppingMenuList"
+                android:gravity="center"
+                android:layout_below="@+id/ignored_view"
+                android:paddingLeft="10sp"
+                android:paddingRight="10sp"
+                android:orientation="horizontal">
+
+                <com.beardedhen.androidbootstrap.BootstrapCircleThumbnail
+                    android:id="@+id/clothes"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/clothes"
+                    app:bootstrapBrand="secondary"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:layout_marginRight="10sp" />
+
+                <com.beardedhen.androidbootstrap.BootstrapCircleThumbnail
+                    android:id="@+id/shoes"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/shoes"
+                    app:bootstrapBrand="secondary"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:layout_marginRight="10sp" />
+
+                <com.beardedhen.androidbootstrap.BootstrapCircleThumbnail
+                    android:id="@+id/hotel"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/hotel"
+                    app:bootstrapBrand="secondary"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:layout_marginRight="10sp" />
+
+                <com.beardedhen.androidbootstrap.BootstrapCircleThumbnail
+                    android:id="@+id/bus"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/bus"
+                    app:bootstrapBrand="secondary"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:layout_marginRight="10sp" />
+
+                <com.beardedhen.androidbootstrap.BootstrapCircleThumbnail
+                    android:id="@+id/new_things"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/new_things"
+                    app:bootstrapBrand="secondary"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ShoppingMenuList_text"
+                android:layout_below="@+id/ShoppingMenuList"
+                android:gravity="center"
+                android:paddingLeft="5sp"
+                android:paddingRight="5sp"
+                android:orientation="horizontal"
+                android:layout_marginTop="-3sp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="12sp"
+                    android:textColor="@color/light_black"
+                    android:text="服饰"
+                    android:gravity="center"
+                    android:layout_weight="1" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="12sp"
+                    android:textColor="@color/light_black"
+                    android:text="跑鞋"
+                    android:gravity="center"
+                    android:layout_weight="1" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="12sp"
+                    android:textColor="@color/light_black"
+                    android:text="住宿"
+                    android:gravity="center"
+                    android:layout_weight="1" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="12sp"
+                    android:textColor="@color/light_black"
+                    android:text="交通"
+                    android:gravity="center"
+                    android:layout_weight="1" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="12sp"
+                    android:textColor="@color/light_black"
+                    android:text="新品"
+                    android:gravity="center"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/line1"
+                android:layout_width="match_parent"
+                android:layout_height="0.1dip"
+                android:background="@color/ios_gray"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="15sp"
+                android:layout_below="@+id/ShoppingMenuList_text"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/toutiao"
+                android:textStyle="bold|italic"
+                android:textSize="20sp"
+                android:textColor="@color/light_red"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="6sp"
+                android:layout_marginBottom="6sp"
+                android:layout_marginRight="10sp"
+                android:layout_below="@+id/line1"
+                android:text="易跑\n头条"/>
+
+            <View
+                android:id="@+id/line2"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="5sp"
+                android:layout_height="0.1dip"
+                android:background="@color/ios_gray"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/toutiao"/>
+
+            <View
+                android:layout_width="1px"
+                android:id="@+id/vertical_line"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="-5sp"
+                android:background="@color/ios_gray"
+                android:layout_toEndOf="@+id/toutiao"
+                android:layout_alignBottom="@+id/toutiao"
+                android:layout_alignTop="@+id/toutiao" />
+
+            <ScrollView
+                android:id="@+id/toutiaoxinwen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/vertical_line"
+                android:layout_toEndOf="@+id/vertical_line"
+                android:layout_alignTop="@+id/vertical_line"></ScrollView>
+
+            <ImageView
+                android:layout_width="18sp"
+                android:layout_height="18sp"
+                android:src="@drawable/suggest"
+                android:id="@+id/suggect_icon"
+                android:gravity="center_vertical"
+                android:layout_toStartOf="@+id/textView2"
+                android:layout_below="@+id/line2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="为你推荐"
+                android:layout_marginLeft="3sp"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="@color/light_black"
+                android:gravity="center"
+                android:id="@+id/textView2"
+                android:layout_centerHorizontal="true"
+                android:layout_alignBottom="@+id/suggect_icon"
+                android:layout_below="@+id/line2" />
+
+            <View
+                android:id="@+id/line3"
+                android:layout_width="match_parent"
+                android:layout_height="0.1dip"
+                android:layout_marginTop="5sp"
+                android:background="@color/ios_gray"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/textView2"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="160sp"
+                android:id="@+id/weinituijian1"
+                android:orientation="horizontal"
+                android:layout_below="@+id/line3"
+                android:layout_margin="1sp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tuijian1"
+                    android:layout_weight="1"
+                    android:layout_margin="1sp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/shoes_pic1"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/tuijian2"
+                    android:layout_weight="1"
+                    android:layout_margin="1sp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/shoes_pic2"/>
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="160sp"
+                android:layout_margin="1sp"
+                android:layout_below="@+id/weinituijian1">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/tuijian3"
+                    android:layout_weight="1"
+                    android:layout_margin="1sp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/shoes_pic3"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/tuijian4"
+                    android:layout_weight="1"
+                    android:layout_margin="1sp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/shoes_pic4"/>
+
+                </RelativeLayout>
+            </LinearLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>
