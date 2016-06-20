@@ -3,6 +3,7 @@ package easyrun.shopping.ui;
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -10,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
+import android.widget.AdapterView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,7 +27,6 @@ import com.squareup.okhttp.Response;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import easyrun.server.SendDataToServerByOKHttp;
@@ -36,6 +37,7 @@ import easyrun.shopping.model.FilterData;
 import easyrun.shopping.model.FilterEntity;
 import easyrun.shopping.model.FilterTwoEntity;
 import easyrun.shopping.model.OperationEntity;
+import easyrun.shoppingDetailFragment.ShoppingDetailsActivity;
 import easyrun.util.ColorUtil;
 import easyrun.util.DensityUtil;
 import easyrun.util.ModelUtil;
@@ -203,7 +205,11 @@ public class Sp_clothes_subFragment extends Fragment implements SmoothListView.I
     }
 
     private void initView() {
+        LayoutInflater inflater=(LayoutInflater)getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        smoothListView.setOnItemClickListener(itemListener);
+
         fvTopFilter.setVisibility(View.INVISIBLE);
+
 
         // 设置筛选数据
         fvTopFilter.setFilterData(mActivity, filterData);
@@ -234,6 +240,16 @@ public class Sp_clothes_subFragment extends Fragment implements SmoothListView.I
 
         filterViewPosition = smoothListView.getHeaderViewsCount() - 1;
     }
+
+    SmoothListView.OnItemClickListener itemListener = new SmoothListView.OnItemClickListener(){
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id ) {
+            Toast.makeText(getActivity(),"123",Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent();
+            intent.setClass(getActivity(), ShoppingDetailsActivity.class);
+            startActivity(intent);
+        }
+    };
 
     private void initListener() {
 
@@ -284,6 +300,7 @@ public class Sp_clothes_subFragment extends Fragment implements SmoothListView.I
                 fillAdapter(ModelUtil.getFilterData(entity, clothesList));
             }
         });
+
 
         smoothListView.setRefreshEnable(true);
         smoothListView.setLoadMoreEnable(true);

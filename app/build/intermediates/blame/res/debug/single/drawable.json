@@ -28,6 +28,10 @@
         "source": "G:\\gcc\\EasyRun222\\app\\src\\main\\res\\drawable\\button_blue.xml"
     },
     {
+        "merged": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\official.png",
+        "source": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\src\\main\\res\\drawable\\official.png"
+    },
+    {
         "merged": "G:\\gcc\\EasyRun222\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\button_focused.xml",
         "source": "G:\\gcc\\EasyRun222\\app\\src\\main\\res\\drawable\\button_focused.xml"
     },
@@ -44,24 +48,24 @@
         "source": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\src\\main\\res\\drawable\\button_upload_pic_focused2.xml"
     },
     {
-        "merged": "G:\\gcc\\EasyRun222\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\button_upload_pic_normal2.xml",
-        "source": "G:\\gcc\\EasyRun222\\app\\src\\main\\res\\drawable\\button_upload_pic_normal2.xml"
-    },
-    {
         "merged": "G:\\gcc\\EasyRunAndroid-gcc-gcc\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\scroll_three.png",
         "source": "G:\\gcc\\EasyRunAndroid-gcc-gcc\\app\\src\\main\\res\\drawable\\scroll_three.png"
+    },
+    {
+        "merged": "G:\\gcc\\EasyRun222\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\button_upload_pic_normal2.xml",
+        "source": "G:\\gcc\\EasyRun222\\app\\src\\main\\res\\drawable\\button_upload_pic_normal2.xml"
     },
     {
         "merged": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\title_bar_menu.png",
         "source": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\src\\main\\res\\drawable\\title_bar_menu.png"
     },
     {
-        "merged": "G:\\gcc\\EasyRunAndroid-gcc-gcc\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\new_things.png",
-        "source": "G:\\gcc\\EasyRunAndroid-gcc-gcc\\app\\src\\main\\res\\drawable\\new_things.png"
-    },
-    {
         "merged": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\upload.png",
         "source": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\src\\main\\res\\drawable\\upload.png"
+    },
+    {
+        "merged": "G:\\gcc\\EasyRunAndroid-gcc-gcc\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\new_things.png",
+        "source": "G:\\gcc\\EasyRunAndroid-gcc-gcc\\app\\src\\main\\res\\drawable\\new_things.png"
     },
     {
         "merged": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\frame11.png",
@@ -92,24 +96,28 @@
         "source": "G:\\gcc\\EasyRunAndroid-gcc-gcc\\app\\src\\main\\res\\drawable\\button_focused.xml"
     },
     {
-        "merged": "G:\\gcc\\EasyRun222\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\icon_home.png",
-        "source": "G:\\gcc\\EasyRun222\\app\\src\\main\\res\\drawable\\icon_home.png"
+        "merged": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_top_material.xml",
+        "source": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_cab_background_top_material.xml"
     },
     {
         "merged": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\scroll_three.png",
         "source": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\src\\main\\res\\drawable\\scroll_three.png"
     },
     {
-        "merged": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_top_material.xml",
-        "source": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_cab_background_top_material.xml"
+        "merged": "G:\\gcc\\EasyRun222\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\icon_home.png",
+        "source": "G:\\gcc\\EasyRun222\\app\\src\\main\\res\\drawable\\icon_home.png"
+    },
+    {
+        "merged": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_borderless_material.xml",
+        "source": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_btn_borderless_material.xml"
     },
     {
         "merged": "G:\\gcc\\EasyRunAndroid-gcc-gcc\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_file.png",
         "source": "G:\\gcc\\EasyRunAndroid-gcc-gcc\\app\\src\\main\\res\\drawable\\ic_file.png"
     },
     {
-        "merged": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_borderless_material.xml",
-        "source": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_btn_borderless_material.xml"
+        "merged": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\img001.jpg",
+        "source": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\src\\main\\res\\drawable\\img001.jpg"
     },
     {
         "merged": "G:\\gcc\\EasyRunAndroid-gcc-gcc\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_edit_text_material.xml",
@@ -132,12 +140,12 @@
         "source": "G:\\gcc\\EasyRun222\\app\\src\\main\\res\\drawable\\ripple_item_clicked.xml"
     },
     {
-        "merged": "G:\\gcc\\EasyRunAndroid-gcc-gcc\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\clothes.png",
-        "source": "G:\\gcc\\EasyRunAndroid-gcc-gcc\\app\\src\\main\\res\\drawable\\clothes.png"
-    },
-    {
         "merged": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_full_material.xml",
         "source": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_ratingbar_full_material.xml"
+    },
+    {
+        "merged": "G:\\gcc\\EasyRunAndroid-gcc-gcc\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\clothes.png",
+        "source": "G:\\gcc\\EasyRunAndroid-gcc-gcc\\app\\src\\main\\res\\drawable\\clothes.png"
     },
     {
         "merged": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_radio_material.xml",
@@ -184,6 +192,10 @@
         "source": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_tab_indicator_material.xml"
     },
     {
+        "merged": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\capture01.jpeg",
+        "source": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\src\\main\\res\\drawable\\capture01.jpeg"
+    },
+    {
         "merged": "G:\\gcc\\EasyRun222\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\scroll_default.png",
         "source": "G:\\gcc\\EasyRun222\\app\\src\\main\\res\\drawable\\scroll_default.png"
     },
@@ -208,12 +220,12 @@
         "source": "G:\\gcc\\EasyRun222\\app\\src\\main\\res\\drawable\\scroll_four.png"
     },
     {
-        "merged": "G:\\gcc\\EasyRunAndroid-gcc-gcc\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_colored_material.xml",
-        "source": "G:\\gcc\\EasyRunAndroid-gcc-gcc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_btn_colored_material.xml"
-    },
-    {
         "merged": "G:\\gcc\\EasyRunAndroid-gcc-gcc\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_radio_material.xml",
         "source": "G:\\gcc\\EasyRunAndroid-gcc-gcc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_btn_radio_material.xml"
+    },
+    {
+        "merged": "G:\\gcc\\EasyRunAndroid-gcc-gcc\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_colored_material.xml",
+        "source": "G:\\gcc\\EasyRunAndroid-gcc-gcc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_btn_colored_material.xml"
     },
     {
         "merged": "G:\\gcc\\EasyRun222\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\icon_shopping.png",
@@ -348,6 +360,10 @@
         "source": "G:\\gcc\\EasyRun222\\app\\src\\main\\res\\drawable\\xml_round_grey_icon.xml"
     },
     {
+        "merged": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\love.png",
+        "source": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\src\\main\\res\\drawable\\love.png"
+    },
+    {
         "merged": "G:\\gcc\\EasyRunAndroid-gcc-gcc\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background_dark.xml",
         "source": "G:\\gcc\\EasyRunAndroid-gcc-gcc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_dialog_material_background_dark.xml"
     },
@@ -366,6 +382,10 @@
     {
         "merged": "G:\\gcc\\EasyRunAndroid-gcc-gcc\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_light.xml",
         "source": "G:\\gcc\\EasyRunAndroid-gcc-gcc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_item_background_holo_light.xml"
+    },
+    {
+        "merged": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\comment.png",
+        "source": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\src\\main\\res\\drawable\\comment.png"
     },
     {
         "merged": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\scroll_five.png",
@@ -556,6 +576,10 @@
         "source": "G:\\gcc\\EasyRun222\\app\\src\\main\\res\\drawable\\ripple_item_clicked_with_mask.xml"
     },
     {
+        "merged": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\goods_introduction.png",
+        "source": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\src\\main\\res\\drawable\\goods_introduction.png"
+    },
+    {
         "merged": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_switch_thumb_material.xml",
         "source": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_switch_thumb_material.xml"
     },
@@ -580,6 +604,10 @@
         "source": "G:\\gcc\\EasyRun222\\app\\src\\main\\res\\drawable\\bg_border.xml"
     },
     {
+        "merged": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\alpha_circle.png",
+        "source": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\src\\main\\res\\drawable\\alpha_circle.png"
+    },
+    {
         "merged": "G:\\gcc\\EasyRun222\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\xml_oval_orange_icon.xml",
         "source": "G:\\gcc\\EasyRun222\\app\\src\\main\\res\\drawable\\xml_oval_orange_icon.xml"
     },
@@ -594,6 +622,10 @@
     {
         "merged": "G:\\gcc\\EasyRunAndroid-gcc-gcc\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_track_material.xml",
         "source": "G:\\gcc\\EasyRunAndroid-gcc-gcc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_seekbar_track_material.xml"
+    },
+    {
+        "merged": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\qq.png",
+        "source": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\src\\main\\res\\drawable\\qq.png"
     },
     {
         "merged": "G:\\gcc\\EasyRunAndroid-gcc-gcc\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\frame.png",
@@ -696,6 +728,14 @@
         "source": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\src\\main\\res\\drawable\\suggest.png"
     },
     {
+        "merged": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\share_button.png",
+        "source": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\src\\main\\res\\drawable\\share_button.png"
+    },
+    {
+        "merged": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_launcher.png",
+        "source": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\src\\main\\res\\drawable\\ic_launcher.png"
+    },
+    {
         "merged": "G:\\gcc\\EasyRun222\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\title_bar_menu.png",
         "source": "G:\\gcc\\EasyRun222\\app\\src\\main\\res\\drawable\\title_bar_menu.png"
     },
@@ -762,6 +802,10 @@
     {
         "merged": "G:\\gcc\\EasyRun222\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\new_things.png",
         "source": "G:\\gcc\\EasyRun222\\app\\src\\main\\res\\drawable\\new_things.png"
+    },
+    {
+        "merged": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\capture02.jpeg",
+        "source": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\src\\main\\res\\drawable\\capture02.jpeg"
     },
     {
         "merged": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_file.png",
@@ -852,6 +896,10 @@
         "source": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
     },
     {
+        "merged": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\capture03.jpg",
+        "source": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\src\\main\\res\\drawable\\capture03.jpg"
+    },
+    {
         "merged": "G:\\gcc\\EasyRunAndroid-gcc-gcc\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\button_blue_focused.xml",
         "source": "G:\\gcc\\EasyRunAndroid-gcc-gcc\\app\\src\\main\\res\\drawable\\button_blue_focused.xml"
     },
@@ -866,6 +914,14 @@
     {
         "merged": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_edittext_focused.xml",
         "source": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\src\\main\\res\\drawable\\bg_edittext_focused.xml"
+    },
+    {
+        "merged": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\head.jpg",
+        "source": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\src\\main\\res\\drawable\\head.jpg"
+    },
+    {
+        "merged": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\capture04.jpg",
+        "source": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\src\\main\\res\\drawable\\capture04.jpg"
     },
     {
         "merged": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\scroll_default.png",

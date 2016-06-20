@@ -104,6 +104,10 @@
         "source": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\src\\main\\res\\layout\\master_upload_pic.xml"
     },
     {
+        "merged": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\res\\merged\\debug\\layout\\vertical_fragment2.xml",
+        "source": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\src\\main\\res\\layout\\vertical_fragment2.xml"
+    },
+    {
         "merged": "G:\\gcc\\EasyRunAndroid-gcc-gcc\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_button_bar_material.xml",
         "source": "G:\\gcc\\EasyRunAndroid-gcc-gcc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_alert_dialog_button_bar_material.xml"
     },
@@ -172,12 +176,12 @@
         "source": "G:\\gcc\\EasyRun222\\app\\src\\main\\res\\layout\\activity_sample.xml"
     },
     {
-        "merged": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
-        "source": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_dialog_title_material.xml"
-    },
-    {
         "merged": "G:\\gcc\\EasyRun222\\app\\build\\intermediates\\res\\merged\\debug\\layout\\header_channel_layout.xml",
         "source": "G:\\gcc\\EasyRun222\\app\\src\\main\\res\\layout\\header_channel_layout.xml"
+    },
+    {
+        "merged": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
+        "source": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_dialog_title_material.xml"
     },
     {
         "merged": "G:\\gcc\\EasyRunAndroid-gcc-gcc\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_up_container.xml",
@@ -204,12 +208,12 @@
         "source": "G:\\gcc\\EasyRun222\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_list_menu_item_radio.xml"
     },
     {
-        "merged": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\res\\merged\\debug\\layout\\picture_content_layout.xml",
-        "source": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\src\\main\\res\\layout\\picture_content_layout.xml"
-    },
-    {
         "merged": "G:\\gcc\\EasyRun222\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",
         "source": "G:\\gcc\\EasyRun222\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_action_mode_bar.xml"
+    },
+    {
+        "merged": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\res\\merged\\debug\\layout\\picture_content_layout.xml",
+        "source": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\src\\main\\res\\layout\\picture_content_layout.xml"
     },
     {
         "merged": "G:\\gcc\\EasyRunAndroid-gcc-gcc\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
@@ -292,6 +296,10 @@
         "source": "G:\\gcc\\EasyRun222\\app\\src\\main\\res\\layout\\header_operation_layout.xml"
     },
     {
+        "merged": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\res\\merged\\debug\\layout\\vertical_fragment1.xml",
+        "source": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\src\\main\\res\\layout\\vertical_fragment1.xml"
+    },
+    {
         "merged": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_material.xml",
         "source": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_alert_dialog_material.xml"
     },
@@ -308,12 +316,12 @@
         "source": "G:\\gcc\\EasyRun222\\app\\build\\intermediates\\exploded-aar\\com.specyci\\residemenu\\1.6\\res\\layout\\residemenu.xml"
     },
     {
-        "merged": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_lines.xml",
-        "source": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\notification_template_lines.xml"
-    },
-    {
         "merged": "G:\\gcc\\EasyRunAndroid-gcc-gcc\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
         "source": "G:\\gcc\\EasyRunAndroid-gcc-gcc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_lines.xml",
+        "source": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\notification_template_lines.xml"
     },
     {
         "merged": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view_list_item.xml",
@@ -488,6 +496,10 @@
         "source": "G:\\gcc\\EasyRunAndroid-gcc-gcc\\app\\src\\main\\res\\layout\\find_picture.xml"
     },
     {
+        "merged": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment2_list_item.xml",
+        "source": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\src\\main\\res\\layout\\fragment2_list_item.xml"
+    },
+    {
         "merged": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\res\\merged\\debug\\layout\\header_ad_layout.xml",
         "source": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\src\\main\\res\\layout\\header_ad_layout.xml"
     },
@@ -510,6 +522,10 @@
     {
         "merged": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\res\\merged\\debug\\layout\\shop_shoes_subfragment.xml",
         "source": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\src\\main\\res\\layout\\shop_shoes_subfragment.xml"
+    },
+    {
+        "merged": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\res\\merged\\debug\\layout\\shopping_details.xml",
+        "source": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\src\\main\\res\\layout\\shopping_details.xml"
     },
     {
         "merged": "G:\\gcc\\EasyRunAndroid-gcc-gcc\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
@@ -692,6 +708,10 @@
         "source": "G:\\gcc\\EasyRun222\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\notification_media_cancel_action.xml"
     },
     {
+        "merged": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\res\\merged\\debug\\layout\\content_main.xml",
+        "source": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\src\\main\\res\\layout\\content_main.xml"
+    },
+    {
         "merged": "G:\\gcc\\EasyRun222\\app\\build\\intermediates\\res\\merged\\debug\\layout\\residemenu_item.xml",
         "source": "G:\\gcc\\EasyRun222\\app\\build\\intermediates\\exploded-aar\\com.specyci\\residemenu\\1.6\\res\\layout\\residemenu_item.xml"
     },
@@ -806,6 +826,10 @@
     {
         "merged": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
         "source": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_list_menu_item_checkbox.xml"
+    },
+    {
+        "merged": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\res\\merged\\debug\\layout\\vertical_fragment3.xml",
+        "source": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\src\\main\\res\\layout\\vertical_fragment3.xml"
     },
     {
         "merged": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\res\\merged\\debug\\layout\\settings.xml",

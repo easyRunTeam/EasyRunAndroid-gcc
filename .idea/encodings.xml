@@ -9,6 +9,26 @@
     <file url="file://$PROJECT_DIR$/app/src/main/java/easyrun/shoppingDetailFragment/VerticalFragment1.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/easyrun/shoppingDetailFragment/VerticalFragment2.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/easyrun/shoppingDetailFragment/VerticalFragment3.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/alpha_circle.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/capture01.jpeg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/capture02.jpeg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/capture03.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/capture04.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/comment.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/goods_introduction.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/head.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/img001.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/love.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/official.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/qq.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/share_button.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/content_main.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/fragment2_list_item.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/shopping_details.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/vertical_fragment1.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/vertical_fragment2.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/vertical_fragment3.xml" charset="GBK" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

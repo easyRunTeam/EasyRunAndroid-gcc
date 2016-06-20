@@ -96,7 +96,7 @@ public class ClothesAdapter extends BaseListAdapter<ClothesEntity> {
             return convertView;
         }
 
-        holder.llRootView.setOnClickListener(itemListener);
+        //holder.llRootView.setOnClickListener(itemListener);
 
         holder.tvTitle.setText(entity.getBrand()+"  "+ entity.getName());
         holder.tvRank.setText("销量：" + entity.getSaleNumber());
@@ -107,12 +107,12 @@ public class ClothesAdapter extends BaseListAdapter<ClothesEntity> {
         return convertView;
     }
 
-    LinearLayout.OnClickListener itemListener = new LinearLayout.OnClickListener(){
+    /*LinearLayout.OnClickListener itemListener = new LinearLayout.OnClickListener(){
         @Override
         public void onClick(View v) {
             System.out.println("------------1232312--------------");
         }
-    };
+    };*/
 
     static class ViewHolder {
         @Bind(R.id.ll_root_view)

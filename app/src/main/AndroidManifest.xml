@@ -20,7 +20,8 @@
         <activity android:name="easyrun.activity.RegisterActivity"></activity>
         <activity android:name="easyrun.activity.RegisterActivity2"></activity>
         <activity android:name="easyrun.activity.NonetActivity"></activity>
-<!--        <activity android:name="easyrun.activity.MainActivity"></activity>-->
+        <activity android:name="easyrun.shoppingDetailFragment.ShoppingDetailsActivity"></activity>
+<!--        <activity android:name="easyrun.activity.ShoppingDetailsActivity"></activity>-->
     </application>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CAMERA" />
