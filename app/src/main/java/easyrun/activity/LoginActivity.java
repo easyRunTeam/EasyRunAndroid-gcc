@@ -39,7 +39,7 @@ import easyrun.util.R;
 import easyrun.util.ServerData;
 
 
-public class LoginActivity extends Activity{
+public class LoginActivity extends Activity{//11
 
     private EditText account;
     private EditText password;
