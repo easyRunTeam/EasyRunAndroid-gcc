@@ -30,18 +30,17 @@
         android:label="@string/app_name_CN"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="easyrun.activity.LoginActivity" >
+        <activity android:name="easyrun.activity.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!-- <activity android:name="easyrun.activity.Sp_shoes_subFragment"></activity> -->
         <activity android:name="easyrun.activity.RegisterActivity" />
         <activity android:name="easyrun.activity.RegisterActivity2" />
         <activity android:name="easyrun.activity.NonetActivity" />
-        <activity android:name="easyrun.activity.MainActivity" />
+        <!-- <activity android:name="easyrun.activity.MainActivity"></activity> -->
     </application>
 
 </manifest>
