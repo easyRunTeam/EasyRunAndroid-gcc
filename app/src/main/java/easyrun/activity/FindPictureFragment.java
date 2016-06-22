@@ -140,7 +140,7 @@ public class FindPictureFragment extends Fragment {
                                     {
                                         // String path2=ServerData+list.get(i).getEventName()+"/"+
 
-                                        String path1=ServerData.BaseURL+"UserPic/"+list.get(i).getEventName()+"/"+list.get(i).getPicID();
+                                        String path1="http://120.27.106.188:8088/UserPic/"+list.get(i).getEventName()+"/"+list.get(i).getPicID();
                                         System.out.println("照片Id:"+path1);
                                         Request request = new Request.Builder().url(path1).build();
                                         //获取响应体

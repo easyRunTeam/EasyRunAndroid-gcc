@@ -45,7 +45,11 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
+
+import easyrun.bean.ConfirmData;
 import easyrun.bean.EventBean;
+import easyrun.bean.FreePicBean;
 import easyrun.bean.UserBean;
 import easyrun.server.SendDataToServerByOKHttp;
 import easyrun.server.SendDateToServer;
@@ -170,7 +174,7 @@ public class MasterUploadPicFragment extends Fragment {
                         startActivity(intent);
                         break;
                     }
-                    
+
                     // bundle.putString("pic",);
                     Thread thread = new Thread(new Runnable() {
                         public void run() {
@@ -209,22 +213,21 @@ public class MasterUploadPicFragment extends Fragment {
                                         if (result.equals("failed")) {
                                             handler.sendEmptyMessage(SendDataToServerByOKHttp.SEND_FAIL);
                                         } else {
-                                            /*Gson gson = new Gson();
+                                            Gson gson = new Gson();
                                             ArrayList<ConfirmData>  data = gson.fromJson(result,
                                                     new TypeToken< ArrayList<ConfirmData>>() {
                                                     }.getType());
                                             System.out.println("result:"+result);
-                                            System.out.println(data.get(0).getIdentityPic());
-                                            System.out.println(data.get(0).getName());
-                                            System.out.println(data.get(0).getAthleteID());
+                                            if(data.get(0).getIdentityPic().equals(null))
+                                                System.out.println("证件照为空");
                                             Bundle bundle = new Bundle();
-                                            bundle.putString("event", event);
-                                            bundle.putString("account", account);
-                                            bundle.putString("path",PicPath);
+                                            bundle.putString("name", data.get(0).getName());
+                                            bundle.putInt("aID", data.get(0).getAthleteID());
+                                            bundle.putString("path",data.get(0).getIdentityPic());
                                             Message msg = new Message();
                                             msg.what = SendDataToServerByOKHttp.SEND_PIC_SECCESS;
                                             msg.setData(bundle);
-                                            handler.sendMessage(msg);*/
+                                            handler.sendMessage(msg);
 
                                         }
                                     }

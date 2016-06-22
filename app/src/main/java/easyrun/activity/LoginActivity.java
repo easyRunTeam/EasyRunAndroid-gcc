@@ -175,10 +175,8 @@ public class LoginActivity extends Activity{//11
                                     client.newCall(request).enqueue(new Callback() {
                                         @Override
                                         public void onFailure(Request request, IOException e) {
-                                            /*Toast toast = Toast.makeText(LoginActivity.this, "网络未连接", Toast.LENGTH_SHORT);
-                                            toast.setGravity(Gravity.CENTER, 0, 0);
-                                            toast.show();*/
-                                            e.printStackTrace();
+                                            handler.sendEmptyMessage(SendDataToServerByOKHttp.SEND_NOTCONNECT);
+
                                         }
 
                                         @Override

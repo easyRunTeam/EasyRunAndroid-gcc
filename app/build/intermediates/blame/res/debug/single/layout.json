@@ -176,6 +176,10 @@
         "source": "G:\\gcc\\EasyRun222\\app\\src\\main\\res\\layout\\activity_sample.xml"
     },
     {
+        "merged": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\res\\merged\\debug\\layout\\user_uploadpic_success.xml",
+        "source": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\src\\main\\res\\layout\\user_uploadpic_success.xml"
+    },
+    {
         "merged": "G:\\gcc\\EasyRun222\\app\\build\\intermediates\\res\\merged\\debug\\layout\\header_channel_layout.xml",
         "source": "G:\\gcc\\EasyRun222\\app\\src\\main\\res\\layout\\header_channel_layout.xml"
     },
@@ -798,6 +802,10 @@
     {
         "merged": "G:\\gcc\\EasyRunAndroid-gcc-gcc\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",
         "source": "G:\\gcc\\EasyRunAndroid-gcc-gcc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_select_dialog_material.xml"
+    },
+    {
+        "merged": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\build\\intermediates\\res\\merged\\debug\\layout\\master_uploadpic_success.xml",
+        "source": "D:\\AndroidApp\\EasyRunAndroid-gcc\\app\\src\\main\\res\\layout\\master_uploadpic_success.xml"
     },
     {
         "merged": "G:\\gcc\\EasyRun222\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_lines.xml",

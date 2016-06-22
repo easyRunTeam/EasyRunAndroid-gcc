@@ -1,8 +1,10 @@
 package easyrun.bean;
 
 import android.graphics.Bitmap;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-public class FreePicBean
+public class FreePicBean implements Parcelable
 {
 	private int eventID = 0;
 	private String userID = "0";
@@ -12,6 +14,40 @@ public class FreePicBean
 	private String userName = "0";
 	private String eventName = "0";
 	private String headImgUrl ="0"; // 用户头像链接
+
+	public int describeContents() {return 0;}
+
+	public void writeToParcel(Parcel out, int flags)
+	{
+		out.writeString(picID);
+	}
+
+	public static final Parcelable.Creator<FreePicBean> CREATOR = new Parcelable.Creator<FreePicBean>()
+	{
+		public FreePicBean createFromParcel(Parcel in)
+		{
+			return new FreePicBean(in);
+		}
+
+		public FreePicBean[] newArray(int size)
+		{
+			return new FreePicBean[size];
+		}
+	};
+
+	public FreePicBean(){}
+
+	private FreePicBean(Parcel in)
+	{
+		userID = in.readString();
+		headImgUrl = in.readString();
+		eventID = in.readInt();
+		picID = in.readString();
+		downloadCnt = in.readInt();
+		upTime = in.readLong();
+		userName = in.readString();
+		eventName = in.readString();
+	}
 
 	public Bitmap getPic() {
 		return pic;

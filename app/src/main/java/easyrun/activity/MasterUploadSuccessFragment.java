@@ -9,61 +9,52 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.special.ResideMenu.ResideMenu;
 
 import easyrun.bean.UserBean;
+import easyrun.shopping.manager.ImageManager;
 import easyrun.util.R;
+import easyrun.util.ServerData;
 
 /**
  * Created by J_Crocodile on 2016/6/21.
  */
 public class MasterUploadSuccessFragment extends Fragment{
-    private Button UploadPicAgain;
-    private Button Call;
+    private TextView Tname;
+    private ImageView pic;
+    private TextView TaID;
     private View parentView;
     private ResideMenu resideMenu;
-    private String account;
-
+    private String name;
+    private String path;
+    private int aID;
+    private ImageManager imageManager;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        getActivity().getActionBar().setTitle("上传成功");
-        getActivity().getActionBar().show();
-        /*parentView = inflater.inflate(R.layout.user_uploadpic_success, container, false);
+        // getActivity().getActionBar().setTitle("上传成功");
+        // getActivity().getActionBar().show();
+        parentView = inflater.inflate(R.layout.master_uploadpic_success, container, false);
         MainActivity parentActivity = (MainActivity) getActivity();
         resideMenu = parentActivity.getResideMenu();
+        imageManager=new ImageManager(parentActivity.getBaseContext());
         Bundle bundle = getArguments();
-        account=bundle.getString("account");
-        UploadPicAgain=(Button)parentView.findViewById(R.id.uploadAgain);
-        Call=(Button)parentView.findViewById(R.id.Call);*/
+        name=bundle.getString("name");
+        aID=bundle.getInt("aID");
+        path=bundle.getString("path");
+        System.out.println(name+" "+aID+" "+path);
+        Tname=(TextView)parentView.findViewById(R.id.Name);
+        TaID=(TextView)parentView.findViewById(R.id.aID);
         // add gesture operation's ignored views
-        Call.setOnClickListener(mylistener);
-        UploadPicAgain.setOnClickListener(mylistener);
+        pic=(ImageView)parentView.findViewById(R.id.athlete);
+        Tname.setText("姓名：" + name);
+        TaID.setText("号码牌：" + aID);
+        //System.out.println(ServerData.BaseURL + "Athlete/pic/" + path);
+        imageManager.loadUrlImage("http://120.27.106.188:8088/"+"Athlete/pic/"+path,pic);
         return parentView;
     }
-
-    Button.OnClickListener mylistener = new Button.OnClickListener(){
-        @Override
-        public void onClick(View v) {
-            //鼠标点击菜单项进入相应的子商城
-            switch (v.getId()){
-                /*case R.id.Call:
-                    Uri uri= Uri.parse("tel:15700082120");
-                    Intent intent=new Intent(Intent.ACTION_CALL,uri);
-                    startActivity(intent);
-                    break;
-                case R.id.uploadAgain:
-                    Bundle bundle=new Bundle();
-                    UserBean user=new UserBean();
-                    user.setAccount(account);
-                    bundle.putParcelable("userInfo", user);
-                    UserUploadPicFragment userUploadPicFragment=new UserUploadPicFragment();
-                    userUploadPicFragment.setArguments(bundle);
-                    changeFragment(userUploadPicFragment);
-                    break;*/
-            }
-        }
-    };
 
     private void changeFragment(Fragment targetFragment){
         resideMenu.clearIgnoredViewList();

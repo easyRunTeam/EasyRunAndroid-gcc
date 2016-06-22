@@ -17,6 +17,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 import com.beardedhen.androidbootstrap.BootstrapCircleThumbnail;
 import com.beardedhen.androidbootstrap.BootstrapEditText;
@@ -44,12 +45,14 @@ public class RegisterActivity extends Activity {
     private static final int IMAGE_REQUEST_CODE = 0;
     private static final int CAMERA_REQUEST_CODE = 1;
     private static final int RESULT_REQUEST_CODE = 2;
+    private RadioGroup identity;
+    private  String who="0";
 
     Handler handler=new Handler(){
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case SendDateToServer.SEND_SUCCESS:
-                    Toast.makeText(RegisterActivity.this, "服务器成功接收", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this, "请进行信息补充", Toast.LENGTH_SHORT).show();
                     break;
                 case SendDateToServer.SEND_ERROR:
                     Toast.makeText(RegisterActivity.this, "服务器连接失败", Toast.LENGTH_SHORT).show();
@@ -74,6 +77,8 @@ public class RegisterActivity extends Activity {
         e_account = (BootstrapEditText) findViewById(R.id.account);
         e_password = (BootstrapEditText) findViewById(R.id.password);
         nextStep = (Button) findViewById(R.id.next_step);
+        identity=(RadioGroup)findViewById(R.id.chooseUser);
+        identity.setOnCheckedChangeListener(mylistener);
         nextStep.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -96,6 +101,7 @@ public class RegisterActivity extends Activity {
                             Map<String, String> textParams = new HashMap<String, String>();
                             textParams.put("account",account);
                             textParams.put("password",password);
+                            textParams.put("who",who);
                             Map<String,File> fileParams = new HashMap<String,File>();
                             File file = new File(picPath);//picPath:头像在本机的存储路径
                             System.out.println("\npicPath="+picPath+"\n");
@@ -109,6 +115,7 @@ public class RegisterActivity extends Activity {
                                     Bundle bundle = new Bundle();
                                     bundle.putString("account",account);
                                     bundle.putString("password",password);
+                                    bundle.putString("who", who);
                                     bundle.putString("headIMG_path",picPath);
                                     intent.putExtras(bundle);
                                     intent.setClass(RegisterActivity.this, RegisterActivity2.class);
@@ -134,9 +141,24 @@ public class RegisterActivity extends Activity {
         });
     }
 
+    RadioGroup.OnCheckedChangeListener mylistener=new RadioGroup.OnCheckedChangeListener(){
+        @Override
+        public void onCheckedChanged(RadioGroup group,int checkId)
+        {
+            if(checkId==R.id.chooseUser)
+            {
+                who="0";
+            }
+            else
+            {
+                who="1";
+            }
+        }
+    };
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
+        System.out.println(requestCode+" "+resultCode);
         if (resultCode != RESULT_CANCELED) {
 
             switch (requestCode) {
@@ -144,19 +166,24 @@ public class RegisterActivity extends Activity {
                     startPhotoZoom(data.getData());
                     break;
                 case CAMERA_REQUEST_CODE:
+                    System.out.println("1");
                     if (Tools.hasSdcard()) {
+                        System.out.print(2);
                         File tempFile = new File(
                                 Environment.getExternalStorageDirectory()
                                         + IMAGE_FILE_NAME);
                         startPhotoZoom(Uri.fromFile(tempFile));
                     } else {
+                        System.out.print(3);
                         Toast.makeText(RegisterActivity.this, "未找到存储卡，无法存储照片！",
                                 Toast.LENGTH_LONG).show();
                     }
 
                     break;
                 case RESULT_REQUEST_CODE:
+                    System.out.println("1");
                     if (data != null) {
+                        System.out.print(2);
                         getImageToView(data);
                     }
                     break;
@@ -226,11 +253,12 @@ public class RegisterActivity extends Activity {
         intent.putExtra("aspectX", 1);
         intent.putExtra("aspectY", 1);
         // outputX outputY 是裁剪图片宽高
-        intent.putExtra("outputX", 1024);
-        intent.putExtra("outputY", 1024);
+        intent.putExtra("outputX", 254);
+        intent.putExtra("outputY", 254);
         intent.putExtra("return-data", true);
-        intent.putExtra("noFaceDetection", true);
-        startActivityForResult(intent, 2);
+        intent.putExtra("noFaceDetection",true);
+        System.out.println("RESULT_REQUEST_CODE: " + RESULT_REQUEST_CODE);
+        startActivityForResult(intent, RESULT_REQUEST_CODE);
     }
 
     /**
@@ -246,6 +274,7 @@ public class RegisterActivity extends Activity {
 
             //将头像存入文件
             Bitmap imgBit = Tools.drawableToBitmap(faceImage.getDrawable());
+            System.out.println("before SD Card");
             String img_url = Tools.getSdCardPath()+"/headIMG/";
             picPath = img_url+"icon.jpg";
             Tools.setPicToView(imgBit, img_url);

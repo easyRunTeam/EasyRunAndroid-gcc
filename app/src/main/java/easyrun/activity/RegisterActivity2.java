@@ -44,7 +44,7 @@ public class RegisterActivity2 extends Activity {
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case SendDateToServer.SEND_SUCCESS:
-                    Toast.makeText(RegisterActivity2.this, "服务器成功接收", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity2.this, "恭喜你注册成功！", Toast.LENGTH_SHORT).show();
                     break;
                 case SendDateToServer.SEND_ERROR:
                     Toast.makeText(RegisterActivity2.this, "服务器连接失败", Toast.LENGTH_SHORT).show();

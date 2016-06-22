@@ -72,11 +72,11 @@ public class PictureListAdapter extends ArrayAdapter<FreePicBean> {
         viewHolder.downloadTime.setText(Integer.toString(item.getDownloadCnt()));
         viewHolder.eventName.setText(item.getEventName());
         viewHolder.eventName1.setText(item.getEventName());
-        //imageManager.loadUrlImage("http://120.27.106.188:8088/EasyRunServer/UserPic/" + item.getEventName() + "/" + item.getPicID(), viewHolder.freePic);
-      //  System.out.println("http://120.27.106.188:8088/EasyRunServer/UserPic/" + item.getEventName() + "/" + item.getPicID());
-       // imageManager.loadUrlImage("http://120.27.106.188:8088/EasyRunServer/UserPic/" + item.getEventName() + "/" + item.getPicID(), viewHolder.freePic1);
+        //imageManager.loadUrlImage("http://120.27.106.188:8088/Athlete/cutface/3530a0aa5a4743fedbd4b27804c86ea3-0.jpg", viewHolder.iconURL);
+        //  System.out.println("http://120.27.106.188:8088/EasyRunServer/UserPic/" + item.getEventName() + "/" + item.getPicID());
+        // imageManager.loadUrlImage("http://120.27.106.188:8088/EasyRunServer/UserPic/" + item.getEventName() + "/" + item.getPicID(), viewHolder.freePic1);
         //imageManager.loadResImage(R.drawable.default_free_pic, viewHolder.freePic);
-       // imageManager.loadResImage(R.drawable.default_free_pic,viewHolder.freePic1);
+        // imageManager.loadResImage(R.drawable.default_free_pic,viewHolder.freePic1);
         viewHolder.freePic.setImageBitmap(item.getPic());
         viewHolder.freePic1.setImageBitmap(item.getPic());
         return cell;

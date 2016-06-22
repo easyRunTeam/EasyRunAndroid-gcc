@@ -73,7 +73,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
             user.setAccount(bundle.getString("account"));
             user.setPassword(bundle.getString("password"));
             user.setWhose(bundle.getString("who"));
-            System.out.println("用户的身份为：" + bundle.getString("who"));
+            System.out.println("用户的身份为："+bundle.getString("who"));
         }
 
         //设置ActionBar
@@ -283,8 +283,8 @@ public class MainActivity extends Activity implements View.OnClickListener{
 
                 Bundle bundle = new Bundle();
                 bundle.putParcelable("userInfo", user);
-                System.out.println("用户身份2：" + user.getWhose());
-                System.out.println("Account: " + user.getAccount());
+                System.out.println("用户身份2："+user.getWhose());
+                System.out.println("Account: "+user.getAccount());
                 if(user.getWhose().equals("0")) {
                     System.out.println("开始进入用户上传界面");
                     UserUploadPicFragment userUploadPicFragment = new UserUploadPicFragment();
