@@ -105,6 +105,8 @@
                 android:layout_alignTop="@+id/password"
                 android:layout_alignBottom="@+id/password" />
 
+
+
             <com.beardedhen.androidbootstrap.BootstrapEditText
                 android:id="@+id/password"
                 android:layout_width="wrap_content"
@@ -122,6 +124,30 @@
                 android:layout_toRightOf="@+id/textAccount"
                 android:layout_toEndOf="@+id/textAccount" />
 
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal"
+                android:id="@+id/chooseUser"
+                android:layout_below="@+id/textPassword"
+                android:layout_alignParentStart="true">
+
+                <RadioButton
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:text="普通用户"
+                    android:id="@+id/User"
+                    android:checked="true"
+                    android:textColor="#666666"/>
+                <RadioButton
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:text="摄影师"
+                    android:id="@+id/Master"
+                    android:checked="false"
+                    android:textColor="#666666"/>
+            </RadioGroup>
             <Button
                 android:id="@+id/next_step"
                 android:layout_width="match_parent"
@@ -129,10 +155,12 @@
                 android:text="下一步"
                 android:textColor="#fff"
                 android:background="@drawable/button_blue"
-                android:layout_marginTop="36dp"
+                android:layout_marginTop="40dp"
                 android:layout_below="@+id/textPassword"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+                android:layout_alignParentStart="true"
+              />
+
 
         </RelativeLayout>
 

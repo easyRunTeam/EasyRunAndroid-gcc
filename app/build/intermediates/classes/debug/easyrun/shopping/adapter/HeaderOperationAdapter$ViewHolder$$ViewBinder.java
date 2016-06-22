@@ -8,12 +8,12 @@ import butterknife.ButterKnife.ViewBinder;
 public class HeaderOperationAdapter$ViewHolder$$ViewBinder<T extends easyrun.shopping.adapter.HeaderOperationAdapter.ViewHolder> implements ViewBinder<T> {
   @Override public void bind(final Finder finder, final T target, Object source) {
     View view;
-    view = finder.findRequiredView(source, 2131625097, "field 'ivImage'");
-    target.ivImage = finder.castView(view, 2131625097, "field 'ivImage'");
-    view = finder.findRequiredView(source, 2131625083, "field 'tvTitle'");
-    target.tvTitle = finder.castView(view, 2131625083, "field 'tvTitle'");
-    view = finder.findRequiredView(source, 2131625103, "field 'tvSubtitle'");
-    target.tvSubtitle = finder.castView(view, 2131625103, "field 'tvSubtitle'");
+    view = finder.findRequiredView(source, 2131625090, "field 'ivImage'");
+    target.ivImage = finder.castView(view, 2131625090, "field 'ivImage'");
+    view = finder.findRequiredView(source, 2131625091, "field 'tvTitle'");
+    target.tvTitle = finder.castView(view, 2131625091, "field 'tvTitle'");
+    view = finder.findRequiredView(source, 2131625102, "field 'tvSubtitle'");
+    target.tvSubtitle = finder.castView(view, 2131625102, "field 'tvSubtitle'");
   }
 
   @Override public void unbind(T target) {

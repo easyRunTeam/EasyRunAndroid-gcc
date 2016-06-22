@@ -8,8 +8,8 @@ import butterknife.ButterKnife.ViewBinder;
 public class HeaderFilterViewView$$ViewBinder<T extends easyrun.shopping.view.HeaderFilterViewView> implements ViewBinder<T> {
   @Override public void bind(final Finder finder, final T target, Object source) {
     View view;
-    view = finder.findRequiredView(source, 2131625094, "field 'fvFilter'");
-    target.fvFilter = finder.castView(view, 2131625094, "field 'fvFilter'");
+    view = finder.findRequiredView(source, 2131625087, "field 'fvFilter'");
+    target.fvFilter = finder.castView(view, 2131625087, "field 'fvFilter'");
   }
 
   @Override public void unbind(T target) {

@@ -63,7 +63,7 @@ public class MarathonRegisterFragment extends Fragment {
     private void openURL(){
 
         setWebView();
-       // webView.loadUrl("http://www.baidu.com");
+        //webView.loadUrl("http://www.baidu.com");
     }
     private void setWebView() {
         WebSettings ws = webView.getSettings();
@@ -122,6 +122,15 @@ public class MarathonRegisterFragment extends Fragment {
                 startActivityForResult(Intent.createChooser(i, "File Chooser"), FILECHOOSER_RESULTCODE);
             }
 
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+
+                view.loadUrl(url);
+
+                //如果不需要其他对点击链接事件的处理返回true，否则返回false
+
+                return true;
+
+            }
 
             // For Android 3.0+
             public void openFileChooser(ValueCallback uploadMsg, String acceptType) {
@@ -153,7 +162,7 @@ public class MarathonRegisterFragment extends Fragment {
                 Intent i = new Intent(Intent.ACTION_GET_CONTENT);
                 i.addCategory(Intent.CATEGORY_OPENABLE);
                 i.setType("*/*");
-               startActivityForResult(
+                startActivityForResult(
                         Intent.createChooser(i, "File Browser"),
                         FILECHOOSER_RESULTCODE);
                 return true;
@@ -202,7 +211,7 @@ public class MarathonRegisterFragment extends Fragment {
             if( webView.canGoBack())
                 webView.goBack(); // goBack()表示返回WebView的上一页面
             else
-               getActivity().finish();
+                getActivity().finish();
             return true; // 返回true拦截事件的传递
         }
         return false;

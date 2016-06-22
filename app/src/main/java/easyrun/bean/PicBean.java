@@ -1,5 +1,7 @@
 package easyrun.bean;
 
+import android.os.Parcelable;
+
 import java.io.File;
 
 public class PicBean

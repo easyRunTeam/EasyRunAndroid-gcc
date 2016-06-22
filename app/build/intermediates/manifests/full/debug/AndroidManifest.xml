@@ -8,6 +8,7 @@
         android:minSdkVersion="17"
         android:targetSdkVersion="23" />
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -37,11 +38,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!-- <activity android:name="easyrun.activity.Sp_shoes_subFragment"></activity> -->
+        <activity android:name="easyrun.activity.MainActivity" />
         <activity android:name="easyrun.activity.RegisterActivity" />
         <activity android:name="easyrun.activity.RegisterActivity2" />
         <activity android:name="easyrun.activity.NonetActivity" />
-        <activity android:name="easyrun.activity.MainActivity" />
     </application>
 
 </manifest>

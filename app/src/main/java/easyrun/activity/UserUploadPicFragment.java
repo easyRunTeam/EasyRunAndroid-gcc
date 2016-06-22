@@ -1,6 +1,7 @@
 package easyrun.activity;
 
 import android.app.AlertDialog;
+import android.app.FragmentTransaction;
 import android.content.ContentResolver;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -26,9 +27,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
-
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.special.ResideMenu.ResideMenu;
 import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.MediaType;
 import com.squareup.okhttp.MultipartBuilder;
@@ -72,6 +73,7 @@ public class UserUploadPicFragment extends Fragment {
     private static final MediaType MEDIA_TYPE_PNG = MediaType.parse("image/png");
     private Button choosePicture;
     private Button deletePicture;
+    private ResideMenu resideMenu;
 
 
 
@@ -79,10 +81,11 @@ public class UserUploadPicFragment extends Fragment {
     Handler handler=new Handler(){
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
+            Bundle bundle=msg.getData();
             switch (msg.what) {
                 case SendDateToServer.SEND_SUCCESS:
                     Toast.makeText(getActivity(), "success", Toast.LENGTH_SHORT).show();
-                    Bundle bundle=msg.getData();
+
                     String [] events=bundle.getStringArray("events");
                     ArrayAdapter<String> adapterEvents=new ArrayAdapter<String>(getActivity(),android.R.layout.simple_spinner_item,events);
                     adapterEvents.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -93,6 +96,10 @@ public class UserUploadPicFragment extends Fragment {
                     break;
                 case SendDateToServer.SEND_NULL:
                     Toast.makeText(getActivity(), "null", Toast.LENGTH_SHORT).show();
+                case SendDataToServerByOKHttp.SEND_PIC_SECCESS:
+                    UserUploadSuccessFragment userUploadSuccessFragment=new UserUploadSuccessFragment();
+                    userUploadSuccessFragment.setArguments(bundle);
+                    changeFragment(userUploadSuccessFragment);
                 default:
                     break;
             }
@@ -102,42 +109,43 @@ public class UserUploadPicFragment extends Fragment {
 
 
 
-        @Override
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         getActivity().getActionBar().setTitle("用户上传界面");
         getActivity().getActionBar().hide();
         getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);//解决软键盘遮挡
         mMainView = inflater.inflate(R.layout.user_upload_pic, container, false);
-            handlerThread.start();
-            Bundle bundle = getArguments();
-            user = bundle.getParcelable("userInfo");
-            String account = user.getAccount();//账号
-            init();
-            bEvent=(Spinner)mMainView.findViewById(R.id.bEvent);
+        handlerThread.start();
+        Bundle bundle = getArguments();
+        user = bundle.getParcelable("userInfo");
+        account = user.getAccount();//账号
+        init();
+        bEvent=(Spinner)mMainView.findViewById(R.id.bEvent);
         submit=(Button)mMainView.findViewById(R.id.submit);
-
+        MainActivity parentActivity = (MainActivity) getActivity();
+        resideMenu = parentActivity.getResideMenu();
         ArrayAdapter<CharSequence> adapterEvents=ArrayAdapter.createFromResource(getActivity(),R.array.bootstrap_dropdown_example_data,android.R.layout.simple_spinner_dropdown_item);
         adapterEvents.setDropDownViewResource(android.R.layout.simple_spinner_item);
         bEvent.setAdapter(adapterEvents);
         bEvent.setOnItemSelectedListener(spnListener);
-            submit.setOnClickListener(mylistener);
+        submit.setOnClickListener(mylistener);
         pic=(ImageView)mMainView.findViewById(R.id.pic);
-            choosePicture=(Button)mMainView.findViewById(R.id.choosePicture);
-            deletePicture=(Button)mMainView.findViewById(R.id.deletePicture);
-            deletePicture.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    pic.setImageResource(R.drawable.frame11);
-                    PicPath=null;
-                    deletePicture.setVisibility(View.INVISIBLE);
-                }
-            });
-            choosePicture.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    showDialog();
-                }
-            });
+        choosePicture=(Button)mMainView.findViewById(R.id.choosePicture);
+        deletePicture=(Button)mMainView.findViewById(R.id.deletePicture);
+        deletePicture.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pic.setImageResource(R.drawable.frame11);
+                PicPath=null;
+                deletePicture.setVisibility(View.INVISIBLE);
+            }
+        });
+        choosePicture.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDialog();
+            }
+        });
 
         return mMainView;
     }
@@ -157,10 +165,10 @@ public class UserUploadPicFragment extends Fragment {
                         startActivity(intent);
                         break;
                     }
-                    Bundle bundle = new Bundle();
+                   /* final Bundle bundle = new Bundle();
                     bundle.putString("event", event);
-                    bundle.putString("account", user.getAccount());
-                    bundle.putString("path",PicPath);
+                    bundle.putString("account", account);
+                    bundle.putString("path",PicPath);*/
                     // bundle.putString("pic",);
                     Thread thread = new Thread(new Runnable() {
                         public void run() {
@@ -196,8 +204,13 @@ public class UserUploadPicFragment extends Fragment {
                                         if (result.equals("failed")) {
                                             handler.sendEmptyMessage(SendDataToServerByOKHttp.SEND_FAIL);
                                         } else {
-                                            System.out.println("succcess");
-
+                                            Message msg = new Message();
+                                            msg.what = SendDataToServerByOKHttp.SEND_PIC_SECCESS;
+                                            Bundle bundle = new Bundle();
+                                            bundle.putString("account", account);
+                                            // bundle.putParcelableArrayList("events", (ArrayList<? extends Parcelable>) eevents);//传递对象数组
+                                            msg.setData(bundle);
+                                            handler.sendMessage(msg);
                                         }
                                     }
                                 }
@@ -223,13 +236,13 @@ public class UserUploadPicFragment extends Fragment {
         public void onNothingSelected(AdapterView<?> parent) {
             event=parent.getSelectedItem().toString();
         }
-        };
+    };
     protected void init(){
         //从服务器获取马拉松比赛信息
         Thread thread = new Thread(new Runnable() {
             public void run() {
                 String path=ServerData.BaseURL + "UploadforUser1";
-             Request request = new Request.Builder()
+                Request request = new Request.Builder()
                         .url(path).build();
 
                 client.newCall(request).enqueue(new Callback() {
@@ -270,7 +283,6 @@ public class UserUploadPicFragment extends Fragment {
                                 msg.what = SendDataToServerByOKHttp.SEND_SUCCESS;
                                 Bundle bundle = new Bundle();
                                 bundle.putStringArray("events", events);
-
                                 // bundle.putParcelableArrayList("events", (ArrayList<? extends Parcelable>) eevents);//传递对象数组
                                 msg.setData(bundle);
                                 handler.sendMessage(msg);
@@ -280,8 +292,8 @@ public class UserUploadPicFragment extends Fragment {
                 });
             }
         });
-       thread.start();
-         try {
+        thread.start();
+        try {
             thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -306,7 +318,7 @@ public class UserUploadPicFragment extends Fragment {
                                 intentFromGallery
                                         .setAction(Intent.ACTION_GET_CONTENT);
 
-                                    startActivityForResult(intentFromGallery,IMAGE_REQUEST_CODE);
+                                startActivityForResult(intentFromGallery,IMAGE_REQUEST_CODE);
 
                                 break;
                             case 1:
@@ -336,32 +348,40 @@ public class UserUploadPicFragment extends Fragment {
     }
 
     @Override
-   public void onActivityResult(int requestCode, int resultCode, Intent data) {
-       if (resultCode != getActivity().RESULT_CANCELED) {
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode != getActivity().RESULT_CANCELED) {
 
-           switch (requestCode) {
-               case IMAGE_REQUEST_CODE:
-                   try {
-                       Uri uri = data.getData();
-                       Log.e("uri", uri.toString());
-                       PicPath=Tools.getPath(getActivity(),uri);
-                       ContentResolver cr = getActivity().getContentResolver();
-                       Bitmap bitmap = BitmapFactory.decodeStream(cr.openInputStream(uri));
+            switch (requestCode) {
+                case IMAGE_REQUEST_CODE:
+                    try {
+                        Uri uri = data.getData();
+                        Log.e("uri", uri.toString());
+                        PicPath=Tools.getPath(getActivity(),uri);
+                        ContentResolver cr = getActivity().getContentResolver();
+                        Bitmap bitmap = BitmapFactory.decodeStream(cr.openInputStream(uri));
 
                 /* 将Bitmap设定到ImageView */
-                           pic.setImageBitmap(bitmap);
-                      deletePicture.setVisibility(View.VISIBLE);
-                       } catch (FileNotFoundException e) {
-                           Log.e("Exception", e.getMessage(),e);
-                       }
-                   break;
-               case CAMERA_REQUEST_CODE:
-                   PicPath=Environment.getExternalStorageDirectory()+"/"+IMAGE_FILE_NAME;
-                   Bitmap camorabitmap = BitmapFactory.decodeFile(PicPath);
-                   pic.setImageBitmap(camorabitmap);
-                   break;
-           }
-       }
-       super.onActivityResult(requestCode, resultCode, data);
-   }
+                        pic.setImageBitmap(bitmap);
+                        deletePicture.setVisibility(View.VISIBLE);
+                    } catch (FileNotFoundException e) {
+                        Log.e("Exception", e.getMessage(),e);
+                    }
+                    break;
+                case CAMERA_REQUEST_CODE:
+                    PicPath=Environment.getExternalStorageDirectory()+"/"+IMAGE_FILE_NAME;
+                    Bitmap camorabitmap = BitmapFactory.decodeFile(PicPath);
+                    pic.setImageBitmap(camorabitmap);
+                    break;
+            }
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+    private void changeFragment(Fragment targetFragment){
+        resideMenu.clearIgnoredViewList();
+        getFragmentManager()
+                .beginTransaction()
+                .replace(R.id.main_fragment, targetFragment, "fragment")
+                .setTransitionStyle(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                .commit();
+    }
 }

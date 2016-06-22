@@ -51,7 +51,7 @@ public class LoginActivity extends Activity{//11
     private  String passwd;
     private  String path;
     private RadioGroup chooseUser;
-    private String who;
+    private String who="0";
 
 
     Handler handler= new Handler(Looper.getMainLooper()){
@@ -92,15 +92,15 @@ public class LoginActivity extends Activity{//11
 
     RadioGroup.OnCheckedChangeListener mylistener=new RadioGroup.OnCheckedChangeListener(){
         @Override
-    public void onCheckedChanged(RadioGroup group,int checkId)
+        public void onCheckedChanged(RadioGroup group,int checkId)
         {
-            if(checkId==R.id.chooseUser)
+            if(checkId==R.id.User)
             {
-                who="1";
+                who="0";
             }
             else
             {
-                who="2";
+                who="1";
             }
         }
     };
@@ -159,9 +159,6 @@ public class LoginActivity extends Activity{//11
                             if (username.equals("")||passwd.equals("")) {
                                 handler.sendEmptyMessage(SendDateToServer.SEND_NULL);
                             }else{
-                                Map<String, String> map = new HashMap<String, String>();
-                                map.put("account",username);
-                                map.put("password",passwd);
                                 try {
                                     //OKHttp
                                     //普通键值对post用法
@@ -178,10 +175,8 @@ public class LoginActivity extends Activity{//11
                                     client.newCall(request).enqueue(new Callback() {
                                         @Override
                                         public void onFailure(Request request, IOException e) {
-                                            Toast toast = Toast.makeText(LoginActivity.this, "网络未连接", Toast.LENGTH_SHORT);
-                                            toast.setGravity(Gravity.CENTER, 0, 0);
-                                            toast.show();
-                                            e.printStackTrace();
+                                            handler.sendEmptyMessage(SendDataToServerByOKHttp.SEND_NOTCONNECT);
+
                                         }
 
                                         @Override
@@ -199,6 +194,7 @@ public class LoginActivity extends Activity{//11
                                                     //传递登录成功的账号密码
                                                     bundle.putString("account", username);
                                                     bundle.putString("password", passwd);
+                                                    bundle.putString("who",who);
                                                     intent.putExtras(bundle);
                                                     intent.setClass(LoginActivity.this, MainActivity.class);
                                                     startActivity(intent);

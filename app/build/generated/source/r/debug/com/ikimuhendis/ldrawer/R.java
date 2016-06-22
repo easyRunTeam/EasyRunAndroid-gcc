@@ -19,6 +19,6 @@ public final class R {
 		public static final int ldrawer_topBottomBarArrowSize = 0x7f090081;
 	}
 	public static final class drawable {
-		public static final int ic_drawer = 0x7f020069;
+		public static final int ic_drawer = 0x7f020070;
 	}
 }

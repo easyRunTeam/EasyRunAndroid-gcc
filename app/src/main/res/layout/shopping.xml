@@ -84,7 +84,7 @@
                     android:layout_marginRight="10sp" />
 
                 <com.beardedhen.androidbootstrap.BootstrapCircleThumbnail
-                    android:id="@+id/new_things"
+                    android:id="@+id/picture"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:src="@drawable/new_things"
@@ -141,7 +141,7 @@
                     android:layout_height="match_parent"
                     android:textSize="12sp"
                     android:textColor="@color/light_black"
-                    android:text="新品"
+                    android:text="照片"
                     android:gravity="center"
                     android:layout_weight="1" />
 
