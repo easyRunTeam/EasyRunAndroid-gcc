@@ -97,7 +97,7 @@ public class ClothesAdapter extends BaseListAdapter<ClothesEntity> {
         }
 
         //holder.llRootView.setOnClickListener(itemListener);
-
+        holder.itemID.setText(entity.getId());//主键id
         holder.tvTitle.setText(entity.getBrand()+"  "+ entity.getName());
         holder.tvRank.setText("销量：" + entity.getSaleNumber());
         holder.tvDescribe.setText(entity.getDescribe());
@@ -127,6 +127,8 @@ public class ClothesAdapter extends BaseListAdapter<ClothesEntity> {
         TextView tvDescribe;
         @Bind(R.id.tv_price)
         TextView tvPrice;
+        @Bind(R.id.itemID)
+        TextView itemID;
         ViewHolder(View view) {
             ButterKnife.bind(this, view);
         }

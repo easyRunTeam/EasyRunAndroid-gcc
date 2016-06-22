@@ -8,17 +8,17 @@ package com.special.ResideMenu;
 
 public final class R {
 	public static final class drawable {
-		public static final int ic_launcher = 0x7f020073;
-		public static final int shadow = 0x7f02008c;
+		public static final int ic_launcher = 0x7f02006f;
+		public static final int shadow = 0x7f02008a;
 	}
 	public static final class id {
-		public static final int iv_background = 0x7f0e04bc;
-		public static final int iv_icon = 0x7f0e04c2;
-		public static final int iv_shadow = 0x7f0e04bd;
-		public static final int layout_left_menu = 0x7f0e04bf;
-		public static final int layout_right_menu = 0x7f0e04c1;
-		public static final int sv_left_menu = 0x7f0e04be;
-		public static final int sv_right_menu = 0x7f0e04c0;
+		public static final int iv_background = 0x7f0e04bd;
+		public static final int iv_icon = 0x7f0e04c3;
+		public static final int iv_shadow = 0x7f0e04be;
+		public static final int layout_left_menu = 0x7f0e04c0;
+		public static final int layout_right_menu = 0x7f0e04c2;
+		public static final int sv_left_menu = 0x7f0e04bf;
+		public static final int sv_right_menu = 0x7f0e04c1;
 		public static final int tv_title = 0x7f0e0483;
 	}
 	public static final class layout {

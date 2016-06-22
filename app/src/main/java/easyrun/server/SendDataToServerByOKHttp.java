@@ -22,10 +22,14 @@ import easyrun.util.ServerData;
  * Created by J_Crocodile on 2016/6/8.
  */
 public class SendDataToServerByOKHttp {
+    public static final int SEND_PIC_SECCESS=0x121;
+    public static final int SEND_NULL = 0x122;
     public static final int SEND_SUCCESS = 0x123;
     public static final int SEND_FAIL = 0x124;
     public static final int SEND_NOTCONNECT = 0x125;
-    public static final int SEND_NULL = 0x122;
+    public static final int INIT_SUCCESS = 0x126;
+    public static final int BUY_SUCCESS = 0x127;
+    public static final int BUY_NOT_ENOUGH = 0x128;
     private Handler handler;
     private final OkHttpClient client = new OkHttpClient();
     private String result;

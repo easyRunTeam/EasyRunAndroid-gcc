@@ -13,8 +13,13 @@
 
         <RelativeLayout
             android:layout_width="fill_parent"
-            android:layout_height="220dp"
-            android:background="@drawable/img001" >
+            android:layout_height="220dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:id="@+id/itemIMG"
+                android:src="@drawable/img001"/>
 
             <TextView
                 android:layout_width="33dp"
@@ -39,6 +44,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_weight="1"
+                    android:id="@+id/itemName"
                     android:text="THE FACE SHOP菲诗小铺深层清洁洁面乳170ml"
                     android:textColor="#fff"
                     android:textSize="16sp" />
@@ -84,26 +90,19 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
-                        android:text="￥28.00"
+                        android:id="@+id/itemPrice"
+                        android:text="积分  100"
                         android:textColor="#f00"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:id="@+id/old_textview"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:text="￥28.00 "
-                        android:textColor="#888"
-                        android:textSize="16sp" />
+                        android:textSize="14sp" />
                 </LinearLayout>
 
                 <TextView
                     android:layout_width="50dp"
                     android:layout_height="22dp"
                     android:layout_marginTop="5dp"
-                    android:background="#ec616c"
+                    android:background="@color/orange"
                     android:gravity="center"
+                    android:textSize="14sp"
                     android:text="包邮"
                     android:textColor="#fff" />
             </LinearLayout>
@@ -121,14 +120,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="22dp"
                     android:gravity="center"
-                    android:text="已售出 28303 件"
+                    android:id="@+id/itemSaleNum"
+                    android:text="销量 28303 件"
                     android:textColor="#999" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="库存：1354件"
+                    android:id="@+id/repertory"
+                    android:text="库存：5件"
                     android:textColor="#999" />
             </LinearLayout>
         </RelativeLayout>
@@ -170,6 +171,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:lineSpacingExtra="5dp"
+            android:id="@+id/itemDescribe"
             android:text="商品名称：THE FACE SHOP菲诗小铺深层清洁洁面乳170ml\n品牌：菲诗小铺\n适用肤质：油性肌肤、混合肌肤\n产地：中国\n生产日期：详见商品包装\n保质期：三年\n包装方式：无盒塑封"
             android:textColor="#888" />
 
@@ -221,22 +223,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:text="182***@qq.com"
+                android:text="我是托"
                 android:textColor="#999" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="油性发质"
-                android:textColor="#999" />
-
-            <RatingBar
-                style="?android:attr/ratingBarStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:numStars="5" />
         </LinearLayout>
 
         <TextView
@@ -245,7 +233,7 @@
             android:layout_marginLeft="14dp"
             android:layout_marginTop="5dp"
             android:lineSpacingExtra="5dp"
-            android:text="这个真的是全五星级的宝贝啊，白菜价格，超级大的一瓶，真的是超乎你的想象，我买的樱桃的，非常喜欢，膏体是淡淡的粉色，泡沫很细腻，配上丽子送的..."
+            android:text="这个真的是全五星级的宝贝啊！赞赞赞！"
             android:textColor="#555" />
 
         <LinearLayout
@@ -256,29 +244,13 @@
             android:paddingBottom="8dp"
             android:paddingTop="5dp" >
 
-            <View
+            <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginLeft="14dp"
-                android:background="@drawable/capture01" />
+                android:id="@+id/customer_send_IMG"
+                android:src="@drawable/ic_launcher" />
 
-            <View
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginLeft="14dp"
-                android:background="@drawable/capture02" />
-
-            <View
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginLeft="14dp"
-                android:background="@drawable/capture03" />
-
-            <View
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginLeft="14dp"
-                android:background="@drawable/capture04" />
         </LinearLayout>
 
         <LinearLayout
@@ -288,21 +260,6 @@
             android:paddingBottom="10dp"
             android:paddingTop="5dp" >
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="14dp"
-                android:layout_weight="1"
-                android:text="樱桃"
-                android:textColor="#888" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:text="2015-01-15 10:12:50"
-                android:textColor="#888" />
         </LinearLayout>
 
         <View
@@ -338,6 +295,7 @@
 
                 <RatingBar
                     style="?android:attr/ratingBarStyleSmall"
+                    android:progressDrawable="@drawable/rating_yellow"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
@@ -347,15 +305,16 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="8sp"
                     android:orientation="horizontal" >
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="#f57c86"
+                        android:background="@color/orange"
                         android:paddingLeft="4dp"
                         android:paddingRight="4dp"
+                        android:textSize="12sp"
                         android:text="全场包邮"
                         android:textColor="#fff" />
 
@@ -363,9 +322,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
-                        android:background="#f57c86"
+                        android:background="@color/orange"
                         android:paddingLeft="4dp"
                         android:paddingRight="4dp"
+                        android:textSize="12sp"
                         android:text="48小时发货"
                         android:textColor="#fff" />
 
@@ -373,20 +333,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
-                        android:background="#f57c86"
+                        android:background="@color/orange"
                         android:paddingLeft="4dp"
                         android:paddingRight="4dp"
+                        android:textSize="12sp"
                         android:text="30天退换货"
                         android:textColor="#fff" />
                 </LinearLayout>
             </LinearLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="进店\n看看"
-                android:textColor="#888" />
         </LinearLayout>
 
         <View

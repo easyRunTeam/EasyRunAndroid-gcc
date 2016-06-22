@@ -3,10 +3,11 @@ package easyrun.shopping.model;
 import java.io.Serializable;
 
 /**
- * Created by sunfusheng on 16/4/20.
+ * Created by gecongcong on 2016/6/20.
  */
 public class ClothesEntity implements Serializable, Comparable<ClothesEntity> {
 
+    private String id = "";         //主键ID
     private String brand = "";		//品牌
     private String name = "";		//衣服名
     private String describe = "";	//描述
@@ -14,7 +15,7 @@ public class ClothesEntity implements Serializable, Comparable<ClothesEntity> {
     private String saleNumber = "0";//销量
     private String price = "";		//价格（积分）
     private String type = "";		//类别
-
+    private String repertory = "0"; //库存
 
     // 暂无数据属性
     private boolean isNoData = false;
@@ -31,7 +32,7 @@ public class ClothesEntity implements Serializable, Comparable<ClothesEntity> {
     }
 
     public ClothesEntity(String brand, String name, String describe,
-                         String imgURL, String saleNumber, String price, String type) {
+                         String imgURL, String saleNumber, String price, String type,String repertory) {
         this.brand = brand;
         this.name = name;
         this.describe = describe;
@@ -39,7 +40,7 @@ public class ClothesEntity implements Serializable, Comparable<ClothesEntity> {
         this.saleNumber = saleNumber;
         this.price = price;
         this.type = type;
-
+        this.repertory = repertory;
     }
 
     public int getHeight() {
@@ -119,5 +120,21 @@ public class ClothesEntity implements Serializable, Comparable<ClothesEntity> {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getRepertory() {
+        return repertory;
+    }
+
+    public void setRepertory(String repertory) {
+        this.repertory = repertory;
     }
 }

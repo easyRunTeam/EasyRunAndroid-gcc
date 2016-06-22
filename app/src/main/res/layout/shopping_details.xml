@@ -3,18 +3,36 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="50dp"
-        android:background="#1fa9a6"
-        android:gravity="center"
-        android:text="商品详情"
-        android:textColor="#fff"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45sp"
+        android:background="@color/ios_purple">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="8sp"
+            android:src="@drawable/icon_return_small"
+            android:id="@+id/returnBack" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_marginEnd="35sp"
+            android:text="商品详情"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_toEndOf="@+id/returnBack" />
+
+    </RelativeLayout>
+
 
     <View
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="1px"
         android:background="#aaaaaa" />
 
@@ -42,13 +60,14 @@
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:background="#fff"
         android:gravity="center_vertical"
         android:orientation="horizontal" >
 
         <TextView
             android:layout_width="0dp"
+            android:id="@+id/price"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_weight="1"
@@ -57,27 +76,28 @@
             android:textColor="#f00" />
 
         <TextView
-            android:layout_width="110dp"
-            android:layout_height="35dp"
-            android:layout_marginLeft="10dp"
-            android:background="#ff0000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/shoppingCartButton"
+            android:padding="6sp"
+            android:background="@color/orange"
             android:gravity="center"
             android:text="加入购物车"
-            android:textColor="#fff"
-            android:textSize="18sp" />
+            android:textColor="@color/white"
+            android:textSize="13sp" />
 
         <TextView
-            android:layout_width="90dp"
-            android:layout_height="35dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:background="#454545"
+            android:layout_width="70sp"
+            android:id="@+id/buyButton"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2sp"
+            android:layout_marginRight="8dp"
+            android:background="@color/orange_red"
             android:gravity="center"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
+            android:padding="6dp"
             android:text="购买"
             android:textColor="#fff"
-            android:textSize="18sp" />
+            android:textSize="13sp" />
     </LinearLayout>
 
 </LinearLayout>

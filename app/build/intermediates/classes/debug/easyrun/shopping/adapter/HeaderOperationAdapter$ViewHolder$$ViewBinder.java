@@ -12,8 +12,8 @@ public class HeaderOperationAdapter$ViewHolder$$ViewBinder<T extends easyrun.sho
     target.ivImage = finder.castView(view, 2131625090, "field 'ivImage'");
     view = finder.findRequiredView(source, 2131625091, "field 'tvTitle'");
     target.tvTitle = finder.castView(view, 2131625091, "field 'tvTitle'");
-    view = finder.findRequiredView(source, 2131625101, "field 'tvSubtitle'");
-    target.tvSubtitle = finder.castView(view, 2131625101, "field 'tvSubtitle'");
+    view = finder.findRequiredView(source, 2131625102, "field 'tvSubtitle'");
+    target.tvSubtitle = finder.castView(view, 2131625102, "field 'tvSubtitle'");
   }
 
   @Override public void unbind(T target) {

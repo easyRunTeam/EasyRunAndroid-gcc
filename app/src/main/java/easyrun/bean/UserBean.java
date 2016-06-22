@@ -30,6 +30,16 @@ public class UserBean implements Parcelable {
 	private String urgencyContact = ""; //紧急联系人姓名
 	private String urgencyPhone = "";	//紧急联系人电话
 
+	public String getWhose() {
+		return whose;
+	}
+
+	public void setWhose(String whose) {
+		this.whose = whose;
+	}
+
+	private String whose="";
+
 	public int describeContents() {return 0;}
 
 	public void writeToParcel(Parcel out, int flags)
@@ -67,6 +77,7 @@ public class UserBean implements Parcelable {
 		address = in.readString();
 		urgencyContact = in.readString();
 		urgencyPhone = in.readString();
+		whose=in.readString();
 	}
 
 

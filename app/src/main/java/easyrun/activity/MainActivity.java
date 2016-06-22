@@ -72,6 +72,8 @@ public class MainActivity extends Activity implements View.OnClickListener{
         if(bundle!=null){
             user.setAccount(bundle.getString("account"));
             user.setPassword(bundle.getString("password"));
+            user.setWhose(bundle.getString("who"));
+            System.out.println("用户的身份为：" + bundle.getString("who"));
         }
 
         //设置ActionBar
@@ -278,11 +280,23 @@ public class MainActivity extends Activity implements View.OnClickListener{
                 startActivity(intent);
             }
             else {
-                UserUploadPicFragment userUploadPicFragment = new UserUploadPicFragment();
+
                 Bundle bundle = new Bundle();
                 bundle.putParcelable("userInfo", user);
-                userUploadPicFragment.setArguments(bundle);
-                changeFragment(userUploadPicFragment);
+                System.out.println("用户身份2：" + user.getWhose());
+                System.out.println("Account: " + user.getAccount());
+                if(user.getWhose().equals("0")) {
+                    System.out.println("开始进入用户上传界面");
+                    UserUploadPicFragment userUploadPicFragment = new UserUploadPicFragment();
+                    userUploadPicFragment.setArguments(bundle);
+                    changeFragment(userUploadPicFragment);
+                }else
+                {
+                    System.out.println("开始进入摄影师上传界面");
+                    MasterUploadPicFragment masterUploadPicFragment=new MasterUploadPicFragment();
+                    masterUploadPicFragment.setArguments(bundle);
+                    changeFragment(masterUploadPicFragment);
+                }
             }
         }else if (view == find_Picture){
             if (!ServerData.checkNetwork(MainActivity.this)) {// 检测网络
@@ -301,8 +315,13 @@ public class MainActivity extends Activity implements View.OnClickListener{
                 findPictureFragment.setArguments(bundle);
                 changeFragment(findPictureFragment);
             }
-        }else if (view == shopping){
-            changeFragment(new ShoppingFragment());
+        }else if (view == shopping){//商城模块
+            //传递用户信息
+            Bundle bundle = new Bundle();
+            bundle.putParcelable("userInfo",user);
+            ShoppingFragment shoppingFragment = new ShoppingFragment();
+            shoppingFragment.setArguments(bundle);
+            changeFragment(shoppingFragment);
         }else if (view == marathon_register){
             MarathonRegisterFragment marathonRegisterFragment=new MarathonRegisterFragment();
             Bundle bundle=new Bundle();

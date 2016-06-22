@@ -26,6 +26,7 @@
             android:background="@color/transparent"
             android:visibility="gone">
 
+            <!--隐藏项，无效-->
             <FrameLayout
                 android:layout_width="190dp"
                 android:layout_height="wrap_content"
@@ -66,6 +67,7 @@
                     android:background="@drawable/xml_oval_half_transparent_bg"/>
 
             </FrameLayout>
+            <!--隐藏项，无效-->
         </RelativeLayout>
 
         <easyrun.shopping.view.FilterView

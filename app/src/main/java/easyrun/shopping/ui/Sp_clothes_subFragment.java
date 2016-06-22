@@ -2,8 +2,8 @@ package easyrun.shopping.ui;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -29,6 +29,7 @@ import java.util.ArrayList;
 import java.util.List;
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import easyrun.bean.UserBean;
 import easyrun.server.SendDataToServerByOKHttp;
 import easyrun.shopping.adapter.ClothesAdapter;
 import easyrun.shopping.model.ChannelEntity;
@@ -37,10 +38,10 @@ import easyrun.shopping.model.FilterData;
 import easyrun.shopping.model.FilterEntity;
 import easyrun.shopping.model.FilterTwoEntity;
 import easyrun.shopping.model.OperationEntity;
-import easyrun.shoppingDetailFragment.ShoppingDetailsActivity;
+import easyrun.shoppingDetailFragment.ShoppingDetailsFragment;
 import easyrun.util.ColorUtil;
 import easyrun.util.DensityUtil;
-import easyrun.util.ModelUtil;
+import easyrun.shopping.data.ClothesData;
 import easyrun.shopping.view.*;
 import easyrun.shopping.view.SmoothListView.SmoothListView;
 import easyrun.util.R;
@@ -63,6 +64,8 @@ public class Sp_clothes_subFragment extends Fragment implements SmoothListView.I
     View viewTitleBg;
     @Bind(R.id.view_action_more_bg)
     View viewActionMoreBg;
+
+    private UserBean userInfo;
     private final OkHttpClient client = new OkHttpClient();
     private byte[] responseByte;
     private String Result="failed";
@@ -177,35 +180,31 @@ public class Sp_clothes_subFragment extends Fragment implements SmoothListView.I
         mActivity = getActivity();
         mScreenHeight = DensityUtil.getWindowHeight(getActivity());
 
+        //获取上一层传来的用户数据
+        Bundle bundle = getArguments();
+        userInfo = bundle.getParcelable("userInfo");
+
         //从服务器端获取数据
         getDataFromServer();
 
         // 筛选数据
         filterData = new FilterData();
-        filterData.setCategory(ModelUtil.getCategoryData());
-        filterData.setSorts(ModelUtil.getSortData());
-        filterData.setFilters(ModelUtil.getFilterData());
+        filterData.setCategory(ClothesData.getCategoryData());
+        filterData.setSorts(ClothesData.getSortData());
+        filterData.setFilters(ClothesData.getFilterData());
 
         // 广告数据
-        adList = ModelUtil.getAdData();
+        adList = ClothesData.getAdData();
 
         // 频道数据
-        channelList = ModelUtil.getChannelData();
+        channelList = ClothesData.getChannelData();
 
         // 运营数据
-        operationList = ModelUtil.getOperationData();
+        operationList = ClothesData.getOperationData();
 
-        // ListView数据
-        //clothesList = ModelUtil.getTravelingData(clothesList);
-        for(int i=0;i<clothesList.size();i++) {
-            ClothesEntity clothes = clothesList.get(i);
-            System.out.println("Brand:"+clothes.getBrand());
-            System.out.println("Name:" + clothes.getName());
-        }
     }
 
     private void initView() {
-        LayoutInflater inflater=(LayoutInflater)getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         smoothListView.setOnItemClickListener(itemListener);
 
         fvTopFilter.setVisibility(View.INVISIBLE);
@@ -241,13 +240,18 @@ public class Sp_clothes_subFragment extends Fragment implements SmoothListView.I
         filterViewPosition = smoothListView.getHeaderViewsCount() - 1;
     }
 
+    //点击商品，显示详细信息
     SmoothListView.OnItemClickListener itemListener = new SmoothListView.OnItemClickListener(){
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id ) {
-            Toast.makeText(getActivity(),"123",Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent();
-            intent.setClass(getActivity(), ShoppingDetailsActivity.class);
-            startActivity(intent);
+
+            String itemID = ((TextView)view.findViewById(R.id.itemID)).getText().toString();//获取商品ID
+            Bundle bundle = new Bundle();
+            bundle.putString("itemID",itemID);
+            bundle.putParcelable("userInfo",userInfo);
+            ShoppingDetailsFragment shoppingDetailsFragment = new ShoppingDetailsFragment();
+            shoppingDetailsFragment.setArguments(bundle);
+            changeFragment(shoppingDetailsFragment);
         }
     };
 
@@ -281,7 +285,7 @@ public class Sp_clothes_subFragment extends Fragment implements SmoothListView.I
         fvTopFilter.setOnItemCategoryClickListener(new FilterView.OnItemCategoryClickListener() {
             @Override
             public void onItemCategoryClick(FilterTwoEntity entity) {
-                fillAdapter(ModelUtil.getCategoryData(entity, clothesList));
+                fillAdapter(ClothesData.getCategoryData(entity, clothesList));
             }
         });
 
@@ -289,7 +293,7 @@ public class Sp_clothes_subFragment extends Fragment implements SmoothListView.I
         fvTopFilter.setOnItemSortClickListener(new FilterView.OnItemSortClickListener() {
             @Override
             public void onItemSortClick(FilterEntity entity) {
-                fillAdapter(ModelUtil.getSortData(entity, clothesList));
+                fillAdapter(ClothesData.getSortData(entity, clothesList));
             }
         });
 
@@ -297,7 +301,7 @@ public class Sp_clothes_subFragment extends Fragment implements SmoothListView.I
         fvTopFilter.setOnItemFilterClickListener(new FilterView.OnItemFilterClickListener() {
             @Override
             public void onItemFilterClick(FilterEntity entity) {
-                fillAdapter(ModelUtil.getFilterData(entity, clothesList));
+                fillAdapter(ClothesData.getFilterData(entity, clothesList));
             }
         });
 
@@ -367,7 +371,7 @@ public class Sp_clothes_subFragment extends Fragment implements SmoothListView.I
         if (list == null || list.size() == 0) {
             smoothListView.setLoadMoreEnable(false);
             int height = mScreenHeight - DensityUtil.dip2px(mContext, 95); // 95 = 标题栏高度 ＋ FilterView的高度
-            mAdapter.setData(ModelUtil.getNoDataEntity(height));
+            mAdapter.setData(ClothesData.getNoDataEntity(height));
         } else {
             smoothListView.setLoadMoreEnable(list.size() > ClothesAdapter.ONE_REQUEST_COUNT);
             mAdapter.setData(list);
@@ -430,6 +434,14 @@ public class Sp_clothes_subFragment extends Fragment implements SmoothListView.I
                 smoothListView.stopLoadMore();
             }
         }, 2000);
+    }
+
+    private void changeFragment(Fragment targetFragment){
+        getFragmentManager()
+                .beginTransaction()
+                .replace(R.id.main_fragment, targetFragment, "fragment")
+                .setTransitionStyle(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                .commit();
     }
 
 }
